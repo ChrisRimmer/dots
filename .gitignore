@@ -1,0 +1,17 @@
+home/.npm/_cacache
+home/.cache
+**/node_modules
+**/*.log
+**/*.log.old
+./**/__pycache__/*
+home/.yarn/bin/*
+home/.ssh/id_rsa
+home/.npm/anonymous-cli-metrics.json
+home/.viminfo
+home/.vim/.netrwhist
+home/.gnupg
+home/.ssh/known_hosts
+home/.zsh_history
+home/.mpd/
+home/.npm/anonymous-cli-metrics.json
+home/.local/share/recently-used.xbel

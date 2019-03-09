@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "cucumber": "^5.1.0",
+    "express-generator": "^4.16.0",
+    "jasmine": "^3.3.1",
+    "jest": "^24.1.0",
+    "mocha": "^5.2.0",
+    "themer": "^3.1.6",
+    "themer-colors-night-sky": "^2.0.0",
+    "themer-termite": "^1.0.1",
+    "typescript": "^3.3.3"
+  }
+}
