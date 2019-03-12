@@ -1,0 +1,6 @@
+[submodule "home/.vim/bundle/Colorizer"]
+	path = home/.vim/bundle/Colorizer
+	url = https://github.com/chrisbra/Colorizer.git
+[submodule "home/.config/awesome"]
+	path = home/.config/awesome
+	url = https://github.com/lcpz/awesome-copycats.git
