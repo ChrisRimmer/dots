@@ -1,4 +1,6 @@
-export PATH=$(yarn global bin):$PATH
+export PATH=~/bin/:$PATH
+export EDITOR='/usr/bin/vim'
+
 . ~/.config/zsh/antigen.zsh
 
 if [[ $UID -eq 0 ]]; then
@@ -9,9 +11,8 @@ else
     local user_symbol='$'
 fi
 
-alias zshrc="vim ~/.zshrc && source ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias i3rc="vim ~/.config/i3/config"
+alias zshrc="$EDITOR ~/.zshrc && source ~/.zshrc"
+alias vimrc="$EDITOR ~/.vimrc"
 
 export prompt="
 %(?.%F{120}.%F{160})╭─%F{038}%n%f@%F{038}%m%f:%F{038}%~%f

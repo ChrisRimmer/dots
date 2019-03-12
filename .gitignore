@@ -3,7 +3,7 @@ home/.cache
 **/node_modules
 **/*.log
 **/*.log.old
-./**/__pycache__/*
+**/__pycache__
 home/.yarn/bin/*
 home/.ssh/id_rsa
 home/.npm/anonymous-cli-metrics.json
@@ -12,6 +12,15 @@ home/.vim/.netrwhist
 home/.gnupg
 home/.ssh/known_hosts
 home/.zsh_history
-home/.mpd/
 home/.npm/anonymous-cli-metrics.json
 home/.local/share/recently-used.xbel
+**/.VimballRecord
+home/.config/discord
+home/.config/dconf
+home/.config/pavucontrol.ini
+home/.config/pulse
+home/.config/openvpn/creds
+home/.config/openvpn/key
+home/.config/Atlassian
+home/.config/openfortivpn
+home/.config/openvpn
