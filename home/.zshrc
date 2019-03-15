@@ -35,3 +35,9 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%b'
 
 eval $(thefuck --alias)
+alias gst='git status'
+alias gap='git add -p'
+alias gdc='git diff --cached'
+alias gd='git diff'
+alias c=clear
+alias gundo='/git checkout -p --'
