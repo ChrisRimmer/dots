@@ -50,7 +50,7 @@ main_window_highlight_color = "red"
 progressbar_color = "yellow"
 statusbar_color = "black"
 active_column_color = "red"
-visualizer_color = "cyan"
+# visualizer_color = "cyan"
 
 # Others
 song_window_title_format = "MPD: {%a > }{%t}{ [%b{ Disc %d}]}|{%f}"
