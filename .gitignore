@@ -1,3 +1,5 @@
+id_rsa.pub
+id_rsa
 home/.npm/_cacache
 home/.cache
 **/node_modules
@@ -5,7 +7,6 @@ home/.cache
 **/*.log.old
 **/__pycache__
 home/.yarn/bin/*
-home/.ssh/id_rsa
 home/.npm/anonymous-cli-metrics.json
 home/.viminfo
 home/.vim/.netrwhist
@@ -24,4 +25,3 @@ home/.config/openvpn/key
 home/.config/Atlassian
 home/.config/openfortivpn
 home/.config/openvpn
-id_rsa.pub
