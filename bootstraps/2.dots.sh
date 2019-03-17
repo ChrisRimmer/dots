@@ -1,4 +1,4 @@
 #!/usr/bin/sh
 
-~/.dots/bin/rebuild-dotlinks.sh
+~/.dots/home/bin/rebuild-dotlinks.sh
 
