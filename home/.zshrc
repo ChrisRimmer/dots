@@ -40,4 +40,6 @@ alias gap='git add -p'
 alias gdc='git diff --cached'
 alias gd='git diff'
 alias c=clear
-alias gundo='/git checkout -p --'
+alias gundo='git checkout -p --'
+alias gunst='git reset HEAD -p'
+
