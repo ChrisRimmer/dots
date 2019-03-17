@@ -1,0 +1,4 @@
+
+[Default Applications]
+x-scheme-handler/dat=appimagekit-beaker-browser.desktop
+x-scheme-handler/http=appimagekit-beaker-browser.desktop
