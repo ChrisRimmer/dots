@@ -3,4 +3,4 @@
 	url = https://github.com/chrisbra/Colorizer.git
 [submodule "home/.config/awesome"]
 	path = home/.config/awesome
-	url = https://github.com/lcpz/awesome-copycats.git
+	url = git@github.com:ChrisRimmer/awesome-copycats.git
