@@ -43,3 +43,13 @@ alias c=clear
 alias gundo='git checkout -p --'
 alias gunst='git reset HEAD -p'
 
+pipe_buf=$(getconf PIPE_BUF /)
+function pad() {
+    # redirect stderr (file descriptor 2) to /dev/null to get rid of noise
+    dd conv=block cbs=$pipe_buf obs=$pipe_buf 2>/dev/null
+}
+function unpad() {
+    dd conv=unblock cbs=$pipe_buf ibs=$pipe_buf 2>/dev/null
+}
+
+source /home/cr/.config/broot/launcher/bash/br
