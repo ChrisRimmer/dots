@@ -52,4 +52,3 @@ function unpad() {
     dd conv=unblock cbs=$pipe_buf ibs=$pipe_buf 2>/dev/null
 }
 
-source /home/cr/.config/broot/launcher/bash/br
