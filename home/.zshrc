@@ -16,7 +16,7 @@ alias vimrc="$EDITOR ~/.vimrc"
 
 export prompt="
 %(?.%F{120}.%F{160})╭─%F{038}%n%f@%F{038}%m%f:%F{038}%~%f
-%(?.%F{120}.%F{160})╰─>%f"
+%(?.%F{120}.%F{160})╰─>%f "
 alias ls="ls --color"
 
 function bin {
@@ -35,13 +35,17 @@ RPROMPT=\$vcs_info_msg_0_
 zstyle ':vcs_info:git:*' formats '%b'
 
 eval $(thefuck --alias)
-alias gst='git status'
+
+# Git aliases
 alias gap='git add -p'
-alias gdc='git diff --cached'
+alias gcm='git commit -m'
 alias gd='git diff'
-alias c=clear
+alias gdc='git diff --cached'
+alias gst='git status'
 alias gundo='git checkout -p --'
 alias gunst='git reset HEAD -p'
+
+alias c=clear
 
 pipe_buf=$(getconf PIPE_BUF /)
 function pad() {
