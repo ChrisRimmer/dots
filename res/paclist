@@ -1,3 +1,4 @@
+acpid
 ashuffle-git
 aurutils
 autoconf
@@ -75,6 +76,7 @@ openbsd-netcat
 openfortivpn
 openresolv
 openssh
+openvpn
 pacman
 pass
 patch
@@ -118,4 +120,6 @@ xorg-xinput
 xorg-xrandr
 xst-git
 xwinwrap-git
+yay
 youtube-dl
+zsh
