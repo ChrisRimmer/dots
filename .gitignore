@@ -29,3 +29,5 @@ id_rsa.pub
 **/node_modules
 **/__pycache__
 **/.VimballRecord
+home/.config/litecli/history
+home/.config/litecli/log
