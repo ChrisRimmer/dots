@@ -26,6 +26,7 @@ diffutils
 discord
 docker-compose
 feh
+ffcast
 file
 filesystem
 findutils
@@ -60,6 +61,7 @@ logrotate
 lsof
 lvm2
 m4
+maim
 make
 man-db
 man-pages
@@ -72,6 +74,7 @@ ncmpcpp
 netctl
 nethogs
 net-tools-debian-ifconfig
+nginx-rtmp
 openbsd-netcat
 openfortivpn
 openresolv
@@ -88,10 +91,13 @@ pkgconf
 powerline
 procps-ng
 protonvpn-cli
+psmisc
 pulseaudio
 pulseaudio-modules-bt-git
 pv
+python2-mako
 rofi
+rsync
 scrot
 sed
 shadow
@@ -102,6 +108,7 @@ sudo
 sxhkd
 systemd-sysvcompat
 tar
+tcc
 texinfo
 thefuck
 tldr
@@ -118,6 +125,7 @@ xorg-xev
 xorg-xinit
 xorg-xinput
 xorg-xrandr
+xsel
 xst-git
 xwinwrap-git
 yay
