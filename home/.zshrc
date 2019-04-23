@@ -4,9 +4,10 @@ export EDITOR='/usr/bin/vim'
 alias zshrc="$EDITOR ~/.zshrc && source ~/.zshrc"
 alias vimrc="$EDITOR ~/.vimrc"
 
-export prompt="
+PROMPT="
 %(?.%F{120}.%F{160})╭─%F{038}%n%f@%F{038}%m%f:%F{038}%~%f
 %(?.%F{120}.%F{160})╰─>%f "
+PROMPT=$'%B%F{black}%{\e(0%}${(r:$COLUMNS::q:)}%{\e(B%}'$PROMPT
 alias ls="ls --color"
 
 function ytdl {
