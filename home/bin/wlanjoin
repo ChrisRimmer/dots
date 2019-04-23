@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+
+sudo ip link set down wlp1s0
+sudo systemctl stop dhcpcd
+sudo netctl stop-all
+ls /etc/netctl/ | selectfromlist | xargs sudo netctl start
+
+sudo systemctl start dhcpcd
