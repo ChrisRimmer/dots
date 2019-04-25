@@ -1,7 +1,0 @@
-#!/usr/bin/sh
-
-ffmpeg -f x11grab \
-	-video_size 1920x1080 -framerate 30 \
-	-i :0 \
-	-vcodec libx264 -preset ultrafast -qp 0 -pix_fmt yuv444p \
-	~/capture.mkv
