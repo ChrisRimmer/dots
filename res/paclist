@@ -35,6 +35,7 @@ gawk
 gettext
 git
 glitchlock
+glmviz-git
 grep
 grub
 gzip
@@ -89,6 +90,7 @@ pciutils
 perf
 perl
 pkgconf
+potato
 powerline
 procps-ng
 protonvpn-cli
@@ -107,6 +109,7 @@ stint-git
 stress
 sudo
 sxhkd
+syncterm
 systemd-sysvcompat
 tar
 tcc
@@ -119,6 +122,7 @@ w3m
 which
 wpa_supplicant
 xclip
+xf86-input-synaptics
 xf86-video-intel
 xorg-server
 xorg-xbacklight
