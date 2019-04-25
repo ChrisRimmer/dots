@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+while true; do
+	xwinwrap -b -fs -nf -ov -- \
+		feh --randomize --bg-fill ~/images/walls/*
+	sleep 300
+done
