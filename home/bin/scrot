@@ -1,4 +1,5 @@
 #!/usr/bin/sh
 
-maim -s --format png
+RECT=$(ffcast $@)
 
+maim -g $RECT | clipimg
