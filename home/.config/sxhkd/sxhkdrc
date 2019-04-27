@@ -1,8 +1,39 @@
 XF86Audio{Prev,Next}
 	mpc -q {prev,next}
 
+control + shift + {Left,Right}
+	mpc -q {prev,next}
+
 XF86AudioPlay
 	mpc -q toggle
 
-super + Tab
-	rofi -show run
+XF86Audio{Lower,Raise}Volume
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86MonBrightness{Down,Up}
+	xbacklight -{dec,inc} 10
+
+Alt_L
+	xrandr --auto; autorandr -c
+
+super + r
+	rofi -show run -theme gruvbox-dark
+
+super + p
+	scrot -s
+
+super + shift + p
+	scrot -w
+
+super + l
+	glitchlock
+
+super + Return
+	xst
+
+super + x
+	rofi -show run -theme gruvbox-dark
+
