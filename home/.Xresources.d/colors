@@ -1,7 +1,7 @@
 ! vim: set filetype=xdefaults :
 
 *.foreground: 	#C8BFB6
-*.background: 	#021B21
+*.background: 	#000000
 *.cursorColor:  #3E4350
 *.color0:       #133C46
 *.color1:       #C2454E
