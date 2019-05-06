@@ -1,8 +1,10 @@
 #!/usr/bin/sh
 
-touch /tmp/$1
-chmod 700 /tmp/$1
+if [[ ! -f /tmp/$1 ]]
+then
+	touch /tmp/$1
+fi
+
 tail -f -n 0 /tmp/$1 2>/dev/null | while read message; do
 	echo $message;
-	$message;
 done

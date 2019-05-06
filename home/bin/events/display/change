@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+echo display status changed >> /tmp/crlog
+autorandr -c
+xrandr --auto
+

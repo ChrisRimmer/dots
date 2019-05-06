@@ -12,6 +12,8 @@ if [ $group != 'cr' ]; then
 	sudo chown :cr /tmp/$1
 fi
 
+sudo chmod 666 /tmp/$1
+
 truncate /tmp/$1 -s 0
 echo ${@:2} > /tmp/$1
 
