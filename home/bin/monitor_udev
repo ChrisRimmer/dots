@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+
+psread udev | while read event; do
+	EVENTSCRIPT=/home/cr/bin/events/$event
+	echo $event
+	if [[ -e $EVENTSCRIPT ]]
+	then
+		$EVENTSCRIPT
+	fi
+done
