@@ -3,6 +3,6 @@
 sudo ip link set down wlp1s0
 sudo systemctl stop dhcpcd
 sudo netctl stop-all
-ls /etc/netctl/ | selectfromlist | xargs sudo netctl start
+ls /etc/netctl/ | grep -v 'hooks' | grep -v 'examples' | selectfromlist | xargs sudo netctl start
 
 sudo systemctl start dhcpcd
