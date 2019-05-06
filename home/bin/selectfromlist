@@ -1,6 +1,5 @@
 #!/usr/bin/sh
 
-#!/bin/bash
 prompt="Please select an item:"
 
 options=()
