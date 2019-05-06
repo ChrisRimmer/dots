@@ -4,4 +4,4 @@ ffcast $@ ffmpeg -f x11grab \
 	-video_size %s -framerate 60 \
 	-i :0.0+%x,%y \
 	-vcodec libx264 -preset ultrafast -qp 0 -pix_fmt yuv444p \
-	~/capture.mkv
+	~/capture.mp4
