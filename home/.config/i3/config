@@ -55,6 +55,11 @@ bindsym $winkey+space focus mode_toggle
 # focus the parent container
 bindsym $winkey+a focus parent
 
+# Set this container to tabbed mode
+bindsym $winkey+c layout toggle
+
+# Set this container to split mode
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
@@ -107,8 +112,9 @@ bar {
 }
 
 # Cosmetic shit
-default_border none
-gaps inner 40
+default_border pixel 1
+bindsym $winkey+y border pixel 1
+gaps inner 20
 
 exec sxhkd &
 exec compton -b
