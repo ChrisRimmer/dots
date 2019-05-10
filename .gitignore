@@ -11,6 +11,7 @@ home/.config/openvpn/key
 home/.config/pavucontrol.ini
 home/.config/pulse
 home/.config/QtProject.conf
+home/.config/Slack
 home/.config/Trolltech.conf
 home/.gnupg
 home/.local/share/recently-used.xbel
