@@ -1,0 +1,2 @@
+deluge-web: 8112
+funkwhale: 9000
