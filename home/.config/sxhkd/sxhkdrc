@@ -1,14 +1,14 @@
-XF86Audio{Prev,Next}
+XF86Audio{Prev,Next,Play}
+	mpc -q {prev,next,toggle}
+
+super + {less,greater}
 	mpc -q {prev,next}
 
-control + shift + {Left,Right}
-	mpc -q {prev,next}
+{F6,F7}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}3dB
 
-XF86AudioPlay
-	mpc -q toggle
-
-XF86Audio{Lower,Raise}Volume
-	pactl set-sink-volume @DEFAULT_SINK@ {-,+}5%
+shift + {F6,F7}
+	pactl set-sink-volume @DEFAULT_SINK@ {0%,0dB}
 
 XF86AudioMute
 	pactl set-sink-mute @DEFAULT_SINK@ toggle
