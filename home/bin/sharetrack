@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+track=`mpc -f '%artist% %title%' | sed 1q`
+id=`youtube-dl "ytsearch1: $track" --get-id`
+echo http://youtu.be/$id | xclip -sel clip
+twmnc Track ID $id send to clipboard
