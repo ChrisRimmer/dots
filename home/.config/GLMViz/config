@@ -1,5 +1,3 @@
-/* copy this file into your ~/.config/GLMViz/ folder */
-
 // Window settings
 Window = {
 	AA = 4
