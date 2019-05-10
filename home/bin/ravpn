@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+
+echo Please enter auth token
+read TOKEN
+
+sudo openfortivpn ra.pccwglobal.com -u 81052524 -p1212$TOKEN --config ~/.config/openfortivpn/ra.vpn.conf
