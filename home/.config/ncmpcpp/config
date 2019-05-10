@@ -1,4 +1,4 @@
-mpd_music_dir = "~/music"
+mpd_music_dir = "/srv/mpd/music/"
 
 mpd_crossfade_time = "5"
 
@@ -6,6 +6,9 @@ mpd_crossfade_time = "5"
 visualizer_fifo_path = "/tmp/mpd.fifo"
 visualizer_output_name = "fifo"
 visualizer_type = "wave" (spectrum/wave)
+
+# UI
+user_interface = "alternative"
 
 # Playlist
 song_columns_list_format = "(3f)[black]{n} (40)[default]{t|f} (25)[red]{a} (30)[blue]{b} (4f)[black]{l}"
@@ -26,7 +29,7 @@ song_library_format = "{%n > }{%t}|{%f}"
 song_status_format = "{%a - }{%t - }{%b}"
 #"$8%t $1• $2%a $1•{ $5%b $1• }$7%y$1"
 #progressbar_look = "||]"
-progressbar_look = "-- "
+progressbar_look = "-= "
 #"-??"
 titles_visibility = "no"
 header_visibility = "no"
