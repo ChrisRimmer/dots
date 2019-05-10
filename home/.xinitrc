@@ -1,3 +1,4 @@
 setxkbmap gb
 xrdb ~/.Xresources
-awesome
+i3
+pulseaudio -D

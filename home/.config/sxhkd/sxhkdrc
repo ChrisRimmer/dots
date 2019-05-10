@@ -16,7 +16,7 @@ XF86AudioMute
 XF86MonBrightness{Down,Up}
 	xbacklight -{dec,inc} 10
 
-Alt_L
+XF86Display
 	xrandr --auto; autorandr -c
 
 super + r
@@ -28,8 +28,11 @@ super + p
 super + shift + p
 	scrot -w
 
-super + l
+super + s ; l
 	glitchlock
+
+super + s ; r
+	pkill -SIGUSR1 sxhkd
 
 super + Return
 	xst
@@ -37,3 +40,5 @@ super + Return
 super + x
 	rofi -show run -theme gruvbox-dark
 
+super + d; {j,k}
+	xrandr --output HDMI1 --auto --{right-of eDP1,off}
