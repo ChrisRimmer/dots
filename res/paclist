@@ -20,7 +20,6 @@ cryptsetup
 ctags
 deluge
 device-mapper
-d-feet
 dhcpcd
 diffutils
 discord
@@ -98,6 +97,8 @@ procps-ng
 protonvpn-cli
 psmisc
 pulseaudio
+pulseaudio-equalizer
+pulseaudio-equalizer-ladspa
 pulseaudio-modules-bt-git
 pv
 python2-mako
@@ -118,6 +119,7 @@ tcc
 texinfo
 thefuck
 tldr
+tty-clock
 util-linux
 vim
 w3m

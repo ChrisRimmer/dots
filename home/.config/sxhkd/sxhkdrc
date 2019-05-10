@@ -37,8 +37,5 @@ super + s ; r
 super + Return
 	xst
 
-super + x
-	rofi -show run -theme gruvbox-dark
-
 super + d; {j,k}
 	xrandr --output HDMI1 --auto --{right-of eDP1,off}
