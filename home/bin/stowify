@@ -1,0 +1,92 @@
+#!/usr/bin/bash
+
+set -euo pipefail
+set -o nounset
+set -o errexit
+IFS=$'\n\t'
+TTY=`tty`
+
+nosrcerr='No source dir provided'
+nodesterr='No destination path provided'
+noStowDirError='No $STOW_DIR set either, bailing out!'
+
+badUsageExit() {
+    echo "Usage: ${0##*/} source destination"
+    exit 1
+}
+
+fileimportprompt() {
+    echo "Import file $1? [(y)es/(n)o/(v)iew it]: "
+}
+dirimportprompt() {
+    echo "Import directory $1? [(y)es/(n)o/(t)ree/(r)ecurse]: "
+}
+pkgnameprompt() {
+    echo "Enter a package name to group $1 with: "
+}
+
+set +u
+if [[ -z $1 ]]; then echo "Missing source" 1>&2 && badUsageExit; fi
+if [[ -z $2 ]]; then
+    echo "Missing destination, falling back to \$STOW_DIR" 1>&2
+    if [[ -z $STOW_DIR ]]; then
+        echo '$STOW_DIR not set' 1>&2
+        badUsageExit
+    fi
+
+    dest=$STOW_DIR
+else
+    dest=$2
+fi
+set -u
+
+src=`cd $1; pwd`
+dest=`cd $dest; pwd`
+
+prompt() {
+    while true; do
+        echo
+        if [[ -d $pkgsrc ]]; then
+            read -n 1 -p `dirimportprompt $pkgsrc`  ans <$TTY
+            echo
+            if [[ "yntr" =~ $ans ]]; then break; fi;
+        elif [[ -f $pkgsrc ]]; then
+            read -n 1 -p `fileimportprompt $pkgsrc`  ans <$TTY
+            echo
+            if [[ "ynv" =~ $ans ]]; then break; fi;
+        else
+            echo I don't know what $pkgsrc is so I don\'t know what to do
+        fi
+    done
+
+    if [[ $ans == t ]]; then
+        tree -a $pkgsrc | less;
+        prompt
+    elif [[ $ans == v ]]; then
+        set +e
+        less $pkgsrc
+        set -e
+        prompt
+    elif [[ $ans == r ]]; then
+        loop $pkgsrc
+    elif [[ $ans == y ]]; then
+        read -p `pkgnameprompt $pkgsrc` pkgname <$TTY
+        stowpath=$dest/$pkgname/$pkgsrc
+        mkdir -p $stowpath
+        cp -nPTr $pkgsrc $stowpath
+        stow -t / -d $dest $pkgname
+    fi
+}
+
+loop() {
+    find $1 \
+    -maxdepth 1 \
+    -mindepth 1 ! \
+    -type l \
+    -printf '%f\n' | while read pkg; do
+        pkgsrc=$1/$pkg;
+        prompt
+    done
+}
+
+loop $src
