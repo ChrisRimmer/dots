@@ -1,0 +1,82 @@
+// Window settings
+Window = {
+	AA = 4
+}
+
+Input = {
+	// Source selection, can be "pulse" or "fifo"
+	source = "PULSE"
+	f_sample = 44100L // 44.1kHz sampling rate
+}
+
+fps = 60;
+duration = 100; // buffer length in ms
+
+fft_size = 65536L; // 2^16
+//fft_size = 4096L; // 2^12
+
+bg_color = "FF282828"
+
+// Spectrum default values
+Spectrum = {
+	// Specifies the highest and lowest signal level
+	max_db = 3
+	min_db = -60
+
+	// Specifies the start and stop frequency of the spectrum
+	f_start = 10
+	f_stop = 20000
+
+	// Logarithmic frequency scaling
+	log_enabled = 0.0
+	// Log start index
+	log_start = 5.
+
+	top_color = "000000"
+	bot_color = "FFFFFF"
+	line_color = "FFFFFF"
+	dB_lines = false
+
+	bar_width = 0.5
+	gravity = 10000.0
+
+	// gradient = 0 - each bar has the full gradient
+	// gradient = 1 - bar color changes with the height of the bar (0db = top_color)
+	// Values in-between 0 and 1 are possible
+	gradient = 0.0
+}
+
+// Standard Spectrum
+Spectrum1 = {}
+
+// Spectrum rendered in the upper half of the window
+/*Spectrum2 = {
+	pos = {
+		ymin = -3.0
+		ymax = 1.0
+	}
+	dB_lines = false;
+}*/
+
+// Oscilloscope default values
+Osc = {
+	// Line color
+	color = "FFFFFF"
+
+	// Line width
+	width = 0.004;
+}
+
+// Standard Oscilloscope
+Osc1 = {
+	pos = {
+		ymin = -3.0; ymax = 1.0;	
+	}
+}
+
+// Oscilloscope rendered in the upper half of the window
+/*Osc2 = {
+	pos = {
+		ymin = -3.0; ymax = 1.0;	
+	}
+}*/
