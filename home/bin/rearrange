@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+unset n;
+n="{ print ";
+while [ "$1" ]; do
+	n="$n\$$1\"	\" ";
+	shift;
+done;
+n="$n }";
+awk -v OFS=" " -v FS=" " "$n" | grep '\w'
