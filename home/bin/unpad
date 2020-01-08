@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+dd conv=unblock cbs=`getconf PIPE_BUF /` ibs=`getconf PIPE_BUF /` 2>/dev/null
