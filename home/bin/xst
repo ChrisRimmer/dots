@@ -1,0 +1,1 @@
+/usr/bin/xst -f scientifica ${@:1} &
