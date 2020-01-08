@@ -1,0 +1,15 @@
+#!/usr/bin/sh
+
+set -euo pipefail
+
+cwd=`pwd`
+cd ~/.config/openvpn/profiles/protonvpn
+
+ls * \
+    | cut -d'.' -f1 \
+    | grep $1 \
+    | selectfromlist \
+    | xargs -I _ sudo openvpn \
+        --config ./_.protonvpn.com.udp.ovpn
+
+cd $cwd
