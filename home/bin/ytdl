@@ -1,0 +1,1 @@
+youtube-dl -x "ytsearch: $@" -o "~/Downloads/%(title)s.%(ect)s" -f bestaudio
