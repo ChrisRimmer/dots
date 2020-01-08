@@ -1,13 +1,25 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory autocd extendedglob nomatch
+unsetopt beep notify
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+export TERM=xterm-256color
 export PATH=~/bin/:$PATH
 export EDITOR='/usr/bin/vim'
+export VISUAL=vim
+
+autoload edit-command-line; zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
+zle -N predict-on
 
 alias zshrc="$EDITOR ~/.zshrc && source ~/.zshrc"
 alias vimrc="$EDITOR ~/.vimrc"
 
-PROMPT="
-%(?.%F{120}.%F{160})╭─%F{038}%n%f@%F{038}%m%f:%F{038}%~%f
-%(?.%F{120}.%F{160})╰─>%f "
-PROMPT=$'%B%F{black}%{\e(0%}${(r:$COLUMNS::q:)}%{\e(B%}'$PROMPT
+PROMPT="%(?.%F{46}.%F{196})%n@%m:~ %f"
 alias ls="ls --color"
 
 function ytdl {
