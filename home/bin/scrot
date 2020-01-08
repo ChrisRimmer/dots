@@ -2,4 +2,5 @@
 
 RECT=$(ffcast $@)
 
-maim -g $RECT | clipimg
+sleep 5
+(maim -g $RECT) | clipimg
