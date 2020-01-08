@@ -1,7 +1,27 @@
 #!/usr/bin/sh
 
-while true; do
-	xwinwrap -b -fs -nf -ov -- \
-		feh --randomize --bg-fill ~/images/walls/*
-	sleep 300
+wallFile=~/.tmp/currentwallpaper
+
+if [[ -n $1 ]] && [[ -d ~/images/walls/$1 ]]; then DIR=~/images/walls/$1;
+else DIR=~/images/walls; fi
+
+selectNextWall() {
+	nextWall=$(shuffle $DIR)
+	echo $nextWall > ~/.tmp/currentwallpaper
+}
+
+loadNextWall() {
+	xwinwrap -b -fs -nf -ov -- feh --bg-fill $(cat $wallFile)
+}
+
+touch $wallFile
+truncate -s 0 $wallFile
+
+(while inotifywait -qqe modify $wallFile; do
+	loadNextWall 2>/dev/null
+done) &
+
+selectNextWall
+while sleep ${2:-300}; do
+	selectNextWall
 done
