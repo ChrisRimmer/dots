@@ -1,11 +1,11 @@
 #!/usr/bin/sh
 
-ffcast $@ ffmpeg -f x11grab \
-	-video_size %s -framerate 60 \
+ffcast $@ ffmpeg \
+	-f x11grab \
+	-c:v ffvhuff \
+	-video_size %s \
+	-framerate 60 \
 	-i :0.0+%x,%y \
-	-vsync 0 \
-	-c:v libx264 \
-	-preset ultrafast \
-	-crf 0 \
-	-pix_fmt yuv420p \
-	~/capture.mp4
+	~/screencap.mkv
+
+#ffcast $@ -vv rec -m 4 ~/capture.mkv
