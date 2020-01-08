@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+2fa -list | selectfromlist | xargs 2fa -clip
