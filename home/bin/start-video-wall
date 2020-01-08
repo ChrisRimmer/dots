@@ -1,1 +1,1 @@
-xwinwrap -g 1920x1080 -ov -- mpv -wid WID /home/cr/video/walls --shuffle --loop-playlist=inf --mute --really-quiet --osd-level=0 --no-osd-bar --osc=no &!
+xwinwrap -g 1920x1080 -ov -- mpv -wid WID /home/cr/video/walls --speed=0.5 --shuffle --loop-playlist=inf --mute --really-quiet --osd-level=0 --no-osd-bar --osc=no &!
