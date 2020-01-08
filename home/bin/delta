@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+
+CMD=${@:2}
+CURRENT=`$CMD`
+sleep $1
+
+while true; do
+    LAST=$CURRENT
+    CURRENT=`$CMD`
+    DELTA=$(($CURRENT - $LAST))
+#    echo "Last: $LAST | Current: $CURRENT | Delta: $DELTA"
+    echo $DELTA
+    sleep $1
+done
