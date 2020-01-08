@@ -1,0 +1,1 @@
+for zip in $(ls ~/Downloads/*.zip); do echo ${zip##*/} | grep --color=never  ' - ' | while read zip; do echo ${zip/ - */}; done; done | uniq | while read artist; do mkdir ~/music/$artist; done
