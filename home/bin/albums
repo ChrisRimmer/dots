@@ -1,0 +1,20 @@
+#!/usr/bin/zsh
+
+IFS=$'\n\t'
+
+for zip in $(ls ~/Downloads/*.zip); do
+  echo ${zip##*/} | grep --color=never  ' - ' | while read zip; do
+    album=${${${zip/* - /}%%.zip}// /_}
+    artist=${${zip/ - */}// /_}
+
+    exdir=~/music/$artist/$album
+
+    if [[ ! -e $exdir ]]; then
+      mkdir $exdir -p
+    fi
+
+    pushd $exdir
+    unzip -u ~/Downloads/$zip
+    popd
+  done
+done
