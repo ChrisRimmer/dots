@@ -1,2 +1,3 @@
-*.font: curie:style=regular 9
+rofi.font: FiraCode 9
+
 
