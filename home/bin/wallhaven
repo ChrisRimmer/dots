@@ -1,25 +1,4 @@
 #!/bin/bash
-#
-# This script gets the beautiful wallpapers from http://wallhaven.cc
-# This script is brought to you by MacEarl and is based on the
-# script for wallbase.cc (https://github.com/sevensins/Wallbase-Downloader)
-#
-# This Script is written for GNU Linux, it should work under Mac OS
-
-REVISION=0.1.9
-
-#####################################
-###   Needed for NSFW/Favorites   ###
-#####################################
-# Enter your Username
-USER=""
-# Enter your password
-# if your password contains ' you need to escape it
-# replace all ' with '"'"'
-PASS=""
-#####################################
-### End needed for NSFW/Favorites ###
-#####################################
 
 #####################################
 ###     Configuration Options     ###
@@ -43,47 +22,23 @@ CATEGORIES=100
 # second for sketchy content, third for nsfw content, 1 to enable,
 # 0 to disable
 FILTER=100
-# Which Resolutions should be downloaded, leave empty for all (most common
-# resolutions possible, for details see wallhaven site), separate multiple
-# resolutions with , eg. 1920x1080,1920x1200
-RESOLUTION=
 # alternatively specify a minimum resolution, please note that specifying
 # both resolutions and a minimum resolution will result in the desired
 # resolutions being ignored, to avoid unwanted behavior only set one of the
 # two options and leave the other blank
 ATLEAST=1920x1080
-# Which aspectratios should be downloaded, leave empty for all (possible
-# values: 4x3, 5x4, 16x9, 16x10, 21x9, 32x9, 48x9, 9x16, 10x16), separate mutliple ratios
-# with , eg. 4x3,16x9
-ASPECTRATIO=
 # Which Type should be displayed (relevance, random, date_added, views,
 # favorites, toplist)
 MODE=toplist
 # if MODE is set to toplist show the toplist for the given timeframe
 # possible values: 1d (last day), 3d (last 3 days), 1w (last week),
 # 1M (last month), 3M (last 3 months), 6M (last 6 months), 1y (last year)
-TOPRANGE=
+TOPRANGE=1w
 # How should the wallpapers be ordered (desc, asc)
 ORDER=desc
-# favorites collections, only used if TYPE = favorites
-# specify the name of the favorites collection you want to download
-# Default is the default collection name on wallhaven
-FAVCOLLECTION="Default"
-# Searchterm, only used if TYPE = search
-# you can also search by tags, use id:TAGID
-# to get the tag id take a look at: https://alpha.wallhaven.cc/tags/
-# for example: to search for nature related wallpapers via the nature tag
-# instead of the keyword use QUERY="id:37"
-QUERY="nature"
-# Search images containing color
-# values are RGB (000000 = black, ffffff = white, ff0000 = red, ...)
-COLOR=""
 # Should the search results be saved to a separate subfolder?
 # 0 for no separate folder, 1 for separate subfolder
 SUBFOLDER=0
-# User from which wallpapers should be downloaded (only used for
-# TYPE=useruploads)
-USR=AksumkA
 # use gnu parallel to speed up the download (0, 1), if set to 1 make sure
 # you have gnuparallel installed, see normal.vs.parallel.txt for
 # speed improvements
@@ -96,45 +51,6 @@ THUMBS=24
 #####################################
 ###   End Configuration Options   ###
 #####################################
-
-#
-# logs in to the wallhaven website to give the user more functionality
-# requires 2 arguments:
-# arg1: username
-# arg2: password
-#
-function login {
-    # checking parameters -> if not ok print error and exit script
-    if [ $# -lt 2 ] || [ "$1" == '' ] || [ "$2" == '' ]
-    then
-        printf "Please make sure to enter valid login credentials,\\n"
-        printf "they are needed for NSFW Content and downloading \\n"
-        printf "your Favorites also make sure your Thumbnails per\\n"
-        printf "Page Setting matches the THUMBS Variable\\n\\n"
-        printf "Press any key to exit\\n"
-        read -r
-        exit
-    fi
-
-    # everythings ok --> login
-    WGET --referer="https://alpha.wallhaven.cc" \
-        "https://alpha.wallhaven.cc/auth/login"
-    token="$(grep 'name="_token"' login | sed 's:.*value="::' \
-        | sed 's/.\{2\}$//')"
-    # source: https://stackoverflow.com/a/17989856
-    encoded_pass=$(echo -n "$PASS" | od -An -tx1 | tr ' ' % | xargs printf "%s" )
-    WGET --referer="https://alpha.wallhaven.cc/auth/login" \
-        --post-data="_token=$token&username=$USER&password=$encoded_pass" \
-        "https://alpha.wallhaven.cc/auth/login"
-} # /login
-
-#
-# get favorites page to extract id number later
-#
-function getFavs {
-    WGET --referer="https://alpha.wallhaven.cc" -O favtmp \
-        "https://alpha.wallhaven.cc/favorites"
-}
 
 #
 # downloads Page with Thumbnails
@@ -150,6 +66,7 @@ function getPage {
         exit
     fi
 
+    echo getPage parameters: $1
     # parameters ok --> get page
     WGET --referer="https://alpha.wallhaven.cc" -O tmp \
         "https://alpha.wallhaven.cc/$1"
@@ -162,12 +79,14 @@ function getPage {
 function downloadWallpapers {
     # get wallpaper id from thumbnails
     URLSFORIMAGES="$(grep -o 'th-[0-9]*' tmp | sed  's .\{3\}  ')"
+    echo $URLSFORIMAGES
 
     OIFS="$IFS"
     IFS=$'\n'
 
     for imgURL in $URLSFORIMAGES
         do
+            echo $imgURL
             if [ $PARALLEL == 1 ]
             then
                 echo "$imgURL" >> download.txt
@@ -321,14 +240,8 @@ while [[ $# -ge 1 ]]
         -f|--filter)
             FILTER="$2"
             shift;;
-        -r|--resolution)
-            RESOLUTION="$2"
-            shift;;
         -g|--atleast)
             ATLEAST="$2"
-            shift;;
-        -a|--aspectratio)
-            ASPECTRATIO="$2"
             shift;;
         -m|--mode)
             MODE="$2"
@@ -336,27 +249,11 @@ while [[ $# -ge 1 ]]
         -o|--order)
             ORDER="$2"
             shift;;
-        -b|--favcollection)
-            FAVCOLLECTION="$2"
-            shift;;
-        -q|--query)
-            QUERY=${2//\'/}
-            shift;;
-        -d|--dye|--color)
-            COLOR="$2"
-            shift;;
-        -u|--user)
-            USR="$2"
-            shift;;
         -p|--parallel)
             PARALLEL="$2"
             shift;;
         -h|--help)
             helpText
-            exit
-            ;;
-        -v|--version)
-            printf "Wallhaven Downloader %s\\n" "$REVISION"
             exit
             ;;
         *)
@@ -368,29 +265,14 @@ while [[ $# -ge 1 ]]
     shift # past argument or value
     done
 
-# optionally create a separate subfolder for each search query
-# might download duplicates as each search query has its own list of
-# downloaded wallpapers
-if [ "$TYPE" == search ] && [ "$SUBFOLDER" == 1 ]
-then
-    LOCATION+=/$(echo "$QUERY" | sed -e "s/ /_/g" -e "s/+/_/g" -e  "s/\\//_/g")
-fi
-
 # creates Location folder if it does not exist
 if [ ! -d "$LOCATION" ]
 then
     mkdir -p "$LOCATION"
 fi
 
+echo "Downloading images to $LOCATION"
 cd "$LOCATION" || exit
-
-# login only when it is required ( for example to download favourites or
-# nsfw content... )
-if  [ "$FILTER" == 001 ] || [ "$FILTER" == 011 ] || [ "$FILTER" == 111 ] \
-    || [ "$TYPE" == favorites ] || [ "$THUMBS" != 24 ]
-then
-    login "$USER" "$PASS"
-fi
 
 if [ "$TYPE" == standard ]
 then
@@ -400,8 +282,8 @@ then
     do
         printf "Download Page %s\\n" "$page"
         s1="search?page=$page&categories=$CATEGORIES&purity=$FILTER&"
-        s1+="atleast=$ATLEAST&resolutions=$RESOLUTION&ratios=$ASPECTRATIO"
-        s1+="&sorting=$MODE&order=$ORDER&topRange=$TOPRANGE&colors=$COLOR"
+        s1+="atleast=$ATLEAST"
+        s1+="&sorting=$MODE&order=$ORDER&topRange=$TOPRANGE"
         getPage "$s1"
         printf "\\t- done!\\n"
         printf "Download Wallpapers from Page %s\\n" "$page"
@@ -418,64 +300,15 @@ then
     do
         printf "Download Page %s\\n" "$page"
         s1="search?page=$page&categories=$CATEGORIES&purity=$FILTER&"
-        s1+="atleast=$ATLEAST&resolutions=$RESOLUTION&ratios=$ASPECTRATIO"
-        s1+="&sorting=$MODE&order=desc&q=$QUERY&topRange=$TOPRANGE&colors=$COLOR"
+        s1+="atleast=$ATLEAST"
+        s1+="&sorting=$MODE&order=desc&topRange=$TOPRANGE"
         getPage "$s1"
         printf "\\t- done!\\n"
         printf "Download Wallpapers from Page %s\\n" "$page"
         downloadWallpapers
         printf "\\t- done!\\n"
     done
-
-elif [ "$TYPE" == favorites ]
-then
-    getFavs
-
-    favnumber="$(grep -o "<small>[0-9]*</small>$FAVCOLLECTION" favtmp | \
-                sed 's/[^0-9]*//g')"
-
-    favlistval=$(grep -Eo "https://alpha.wallhaven.cc/favorites/[0-9]+[^.]*small>$FAVCOLLECTION" \
-                favtmp | sed -r 's/([^0-9]*)([0-9]+)(".*)/\2/')
-
-    if [ -z "$favnumber" ] || [ -z "$favlistval" ]
-    then
-        printf "Please check the value specified for FAVCOLLECTION\\n"
-        printf "it seems that a collection with the name \"%s\" does not exist\\n\\n" \
-                "$FAVCOLLECTION"
-        printf "Press any key to exit\\n"
-        read -r
-        exit
-    fi
-
-    for ((  count=0, page="$STARTPAGE";
-            count< "$WPNUMBER" && count< "$favnumber";
-            count=count+"$THUMBS", page=page+1 ));
-    do
-        printf "Download Page %s\\n" "$page"
-        getPage "favorites/$favlistval?page=$page"
-        printf "\\t- done!\\n"
-        printf "Download Wallpapers from Page %s\\n" "$page"
-        downloadWallpapers
-        printf "\\t- done!\\n"
-    done
-
-elif [ "$TYPE" == useruploads ]
-then
-    # UPLOADS FROM SPECIFIC USER
-    for ((  count=0, page="$STARTPAGE";
-            count< "$WPNUMBER";
-            count=count+"$THUMBS", page=page+1 ));
-    do
-        printf "Download Page %s\\n" "$page"
-        getPage "user/$USR/uploads?page=$page&purity=$FILTER"
-        printf "\\t- done!\\n"
-        printf "Download Wallpapers from Page %s\\n" "$page"
-        downloadWallpapers
-        printf "\\t- done!\\n"
-    done
-
 else
     printf "error in TYPE please check Variable\\n"
 fi
 
-rm -f cookies.txt login login.1 favtmp
