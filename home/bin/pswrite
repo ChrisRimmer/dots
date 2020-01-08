@@ -4,16 +4,6 @@ touch /tmp/$1
 owner=`stat -c %U /tmp/$1`
 group=`stat -c %G /tmp/$1`
 
-if [ $owner != 'root' ]; then
-	sudo chown root /tmp/$1
-fi
-
-if [ $group != 'cr' ]; then
-	sudo chown :cr /tmp/$1
-fi
-
-sudo chmod 666 /tmp/$1
-
 truncate /tmp/$1 -s 0
 echo ${@:2} > /tmp/$1
 
