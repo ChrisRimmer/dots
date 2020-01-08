@@ -1,0 +1,3 @@
+#!/usr/bin/sh
+
+dd conv=block cbs=`getconf PIPE_BUF /` obs=`getconf PIPE_BUF /` 2>/dev/null
