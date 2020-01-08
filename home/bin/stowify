@@ -6,87 +6,141 @@ set -o errexit
 IFS=$'\n\t'
 TTY=`tty`
 
-nosrcerr='No source dir provided'
-nodesterr='No destination path provided'
-noStowDirError='No $STOW_DIR set either, bailing out!'
+if [[ $1 == "-h" ]]; then
+	echo "Stowify is a script to help you move a big blob of disorganised junk"
+	echo " and package it up neatly into little packages used by stow."
+	echo ""
+	if ! command -v stow 1>/dev/null; then
+		echo "This script depends on GNU stow, since that's kind of its point,"
+		echo "so you probably want to install it from your package manager."
+	fi
+	echo ""
+	echo "Usage: stowify [OPTION]... SRC DEST"
+	echo "Options"
+	echo " -h show this help"
+	echo ""
+	echo "SRC can be a directory or a file, and will typically be somewhere you"
+	echo "want to move 'real' files out of so that they can be replaced with"
+	echo "symlinks to your newly made stow packages"
+	echo ""
+	echo "DEST must be a writable directory, and through the usage of stowify"
+	echo "DEST will gradually be populated with packages created for stow to"
+	echo "restore later."
+	echo ""
+	echo "If SRC is a directory, stowify will loop through all of its children"
+	echo "and prompt for action on each, where the action will depend on the"
+	echo "nature of the child"
+	echo "•If the child is a plain file, stowify will offer you the choice of"
+	echo " viewing the file, packaging it, or ignoring it."
+	echo "•If the child is a directory, stowify will offer you the choice of"
+	echo " tree'ing it, packaging it, or ignoring it"
+	echo "If SRC is a plain file, stowify will do the same as mentioned above"
+	echo " for child files"
+	echo ""
+	exit 0;
+fi
 
-badUsageExit() {
-    echo "Usage: ${0##*/} source destination"
-    exit 1
+fileimportPrompt() {
+	echo "Import file $1? [(y)es/(n)o/(v)iew it]: "
 }
-
-fileimportprompt() {
-    echo "Import file $1? [(y)es/(n)o/(v)iew it]: "
+dirimportPrompt() {
+	echo "Import directory $1? [(y)es/(n)o/(t)ree/(r)ecurse]: "
 }
-dirimportprompt() {
-    echo "Import directory $1? [(y)es/(n)o/(t)ree/(r)ecurse]: "
+unknownimportPrompt() {
+	echo "Import unknown object $1? [(y)es/(n)o/(v)iew it]: "
 }
-pkgnameprompt() {
-    echo "Enter a package name to group $1 with: "
+packagenamePrompt() {
+	echo "Enter a package name to store $1 in [$2]: "
 }
 
 set +u
-if [[ -z $1 ]]; then echo "Missing source" 1>&2 && badUsageExit; fi
-if [[ -z $2 ]]; then
-    echo "Missing destination, falling back to \$STOW_DIR" 1>&2
-    if [[ -z $STOW_DIR ]]; then
-        echo '$STOW_DIR not set' 1>&2
-        badUsageExit
-    fi
+if [[ -z $1 ]]; then
+	read -p "Please provide a source path: "  ans <$TTY
+	src=$ans;
+else src=$1;
+fi
 
-    dest=$STOW_DIR
-else
-    dest=$2
+if [[ -z $2 ]]; then
+	if [[ -z $STOW_DIR ]]; then
+		read -p "Please provide a path to stow files into: "  ans <$TTY
+		dest=$ans
+	else dest=$STOW_DIR;
+	fi
+else dest=$2
 fi
 set -u
 
-src=`cd $1; pwd`
+
+if   [[ ! -e $src ]]; then echo "Source $src doesn't exist"; exit 1;
+elif [[ ! -r $src ]]; then echo "Source $src must be readable"; exit 1;
+elif [[ -d $src ]]; then src=`cd $src; pwd`;
+fi
+
+if   [[ ! -e $dest ]]; then echo "Destination $dest doesn't exist"; exit 1;
+elif [[ ! -d $dest ]]; then echo "Destination $dest must be a directory"; exit 1;
+elif [[ ! -r $dest ]]; then echo "Destination $dest must be readable"; exit 1;
+elif [[ ! -w $dest ]]; then echo "Destination $dest must be writable"; exit 1;
+elif [[ ! -x $dest ]]; then echo "Destination $dest must be executable"; exit 1;
+fi
+
 dest=`cd $dest; pwd`
 
-prompt() {
-    while true; do
-        echo
-        if [[ -d $pkgsrc ]]; then
-            read -n 1 -p `dirimportprompt $pkgsrc`  ans <$TTY
-            echo
-            if [[ "yntr" =~ $ans ]]; then break; fi;
-        elif [[ -f $pkgsrc ]]; then
-            read -n 1 -p `fileimportprompt $pkgsrc`  ans <$TTY
-            echo
-            if [[ "ynv" =~ $ans ]]; then break; fi;
-        else
-            echo I don't know what $pkgsrc is so I don\'t know what to do
-        fi
-    done
+validateAction () {
+	while true; do
+		echo
+		if [[ -d $1 ]]; then
+			read -n 1 -p `dirimportPrompt $1`  ans <$TTY
+			echo
+			if [[ "yntr" =~ $ans ]]; then break; fi;
+		elif [[ -f $1 ]]; then
+			read -n 1 -p `fileimportPrompt $1`  ans <$TTY
+			echo
+			if [[ "ynv" =~ $ans ]]; then break; fi;
+		else
+			read -n 1 -p `unknownimportPrompt $1`  ans <$TTY
+			echo
+			if [[ "ynv" =~ $ans ]]; then break; fi;
+		fi
+	done
+}
 
-    if [[ $ans == t ]]; then
-        tree -a $pkgsrc | less;
-        prompt
-    elif [[ $ans == v ]]; then
-        set +e
-        less $pkgsrc
-        set -e
-        prompt
-    elif [[ $ans == r ]]; then
-        loop $pkgsrc
-    elif [[ $ans == y ]]; then
-        read -p `pkgnameprompt $pkgsrc` pkgname <$TTY
-        stowpath=$dest/$pkgname/$pkgsrc
-        mkdir -p $stowpath
-        cp -nPTr $pkgsrc $stowpath
-        stow -t / -d $dest $pkgname
-    fi
+promptForAction() {
+	sourcePath=$1/$2
+	validateAction $sourcePath
+	if [[ $ans == t ]]; then
+		tree -a $sourcePath | less;
+		promptForAction $1 $2
+	elif [[ $ans == v ]]; then
+		set +e
+		less $sourcePath
+		set -e
+		promptForAction $1 $2
+	elif [[ $ans == r ]]; then
+		loop $sourcePath
+	elif [[ $ans == y ]]; then
+		read -p `packagenamePrompt $sourcePath ${packageName:-''}` packageName <$TTY
+		packagePath=$dest/$packageName
+		currentItemPath=$packagePath/$1
+		echo mkdir -p $packagePath/$1
+		echo cp -rfL $sourcePath $currentItemPath
+		echo rm -r $sourcePath
+		echo stow -t / -d $dest $packageName
+	fi
 }
 
 loop() {
-    find $1 \
-    -maxdepth 1 \
-    -mindepth 1 ! \
-    -type l \
-    -printf '%f\n' | while read pkg; do
-        pkgsrc=$1/$pkg;
-        prompt
-    done
+	if [[ -f $1 ]];
+		then promptForAction $(pwd) $1;
+	elif [[ -d $1 ]]; then
+		find $1 \
+		-maxdepth 1 \
+		-mindepth 1 ! \
+		-printf '%f\n' | while read package; do
+			promptForAction $1 $package
+		done
+	fi
 }
 
 loop $src
+
+# vim: ts=4:sw=4
