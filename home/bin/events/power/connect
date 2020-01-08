@@ -1,2 +1,5 @@
 #!/usr/bin/sh
 
+todo=${0%}.d/
+echo $todo
+run-parts $todo
