@@ -1,0 +1,88 @@
+10:28:39.457: CPU Name: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+10:28:39.457: CPU Speed: 971.922MHz
+10:28:39.458: Physical Cores: 4, Logical Cores: 8
+10:28:39.458: Physical Memory: 15858MB Total, 5548MB Free
+10:28:39.458: Kernel Version: Linux 5.9.1-arch1-1
+10:28:39.458: Distribution: "Arch Linux" Unknown
+10:28:39.459: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.20.9
+10:28:39.462: Portable mode: false
+10:28:39.538: OBS 26.0.2-2 (linux)
+10:28:39.538: ---------------------------------
+10:28:39.538: ---------------------------------
+10:28:39.538: audio settings reset:
+10:28:39.538: 	samples per sec: 48000
+10:28:39.538: 	speakers:        2
+10:28:39.539: ---------------------------------
+10:28:39.539: Initializing OpenGL...
+10:28:39.649: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 620 (KBL GT2)
+10:28:39.650: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 20.2.0, shading language 4.60
+10:28:39.665: ---------------------------------
+10:28:39.665: video settings reset:
+10:28:39.665: 	base resolution:   1920x1080
+10:28:39.665: 	output resolution: 1920x1080
+10:28:39.665: 	downscale filter:  Bicubic
+10:28:39.665: 	fps:               30/1
+10:28:39.665: 	format:            NV12
+10:28:39.665: 	YUV mode:          709/Partial
+10:28:39.665: NV12 texture support not available
+10:28:39.670: Audio monitoring device:
+10:28:39.670: 	name: Default
+10:28:39.670: 	id: default
+10:28:39.670: ---------------------------------
+10:28:39.672: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+10:28:39.755: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+10:28:39.755: No blackmagic support
+10:28:39.765: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+10:28:39.765: 
+10:28:39.765: FFMPEG VAAPI supported
+10:28:39.774: Failed to load 'en-GB' text for module: 'v4l2sink.so'
+10:28:39.776: VLC found, VLC video source enabled
+10:28:39.776: ---------------------------------
+10:28:39.776:   Loaded Modules:
+10:28:39.776:     vlc-video.so
+10:28:39.776:     v4l2sink.so
+10:28:39.776:     text-freetype2.so
+10:28:39.776:     rtmp-services.so
+10:28:39.776:     obs-x264.so
+10:28:39.776:     obs-transitions.so
+10:28:39.776:     obs-outputs.so
+10:28:39.776:     obs-libfdk.so
+10:28:39.776:     obs-filters.so
+10:28:39.776:     obs-ffmpeg.so
+10:28:39.776:     linux-v4l2.so
+10:28:39.776:     linux-pulseaudio.so
+10:28:39.776:     linux-jack.so
+10:28:39.776:     linux-decklink.so
+10:28:39.776:     linux-capture.so
+10:28:39.776:     linux-alsa.so
+10:28:39.776:     image-source.so
+10:28:39.776:     frontend-tools.so
+10:28:39.776:     decklink-ouput-ui.so
+10:28:39.776: ---------------------------------
+10:28:39.776: ==== Startup complete ===============================================
+10:28:39.780: All scene data cleared
+10:28:39.780: ------------------------------------------------
+10:28:39.788: pulse-input: Server name: 'pulseaudio 13.99.2-13-g7f4d7'
+10:28:39.788: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+10:28:39.788: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor'
+10:28:39.788: [Loaded global audio device]: 'Desktop Audio'
+10:28:39.788: pulse-input: Server name: 'pulseaudio 13.99.2-13-g7f4d7'
+10:28:39.789: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+10:28:39.789: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+10:28:39.789: [Loaded global audio device]: 'Mic/Aux'
+10:28:39.789:     - filter: 'Noise Gate' (noise_gate_filter)
+10:28:39.801: v4l2-input: Start capture from /dev/video0
+10:28:39.801: v4l2-input: Input: 0
+10:28:39.808: v4l2-input: Resolution: 640x480
+10:28:39.808: v4l2-input: Pixelformat: BGR3
+10:28:39.808: v4l2-input: Linesize: 1920 Bytes
+10:28:39.808: v4l2-input: Framerate: 30.00 fps
+10:28:39.809: xshm-input: Geometry 1920x1080 @ 0,0
+10:28:39.811: Switched to scene 'Scene'
+10:28:39.811: ------------------------------------------------
+10:28:39.811: Loaded scenes:
+10:28:39.811: - scene 'Scene':
+10:28:39.812:     - source: 'Screen Capture (XSHM)' (xshm_input)
+10:28:39.812:     - source: 'Video Capture Device (V4L2)' (v4l2_input)
+10:28:39.812:     - source: 'VLC Video Source' (vlc_source)
+10:28:39.812: ------------------------------------------------

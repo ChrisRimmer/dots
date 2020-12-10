@@ -1,0 +1,125 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style rel="stylesheet" media="screen">
+html{font:14px / 24px Helvetica, Arial, sans-serif}body{margin:0px;color:#161616;background:#b4b4b4}div{overflow:hidden;min-width:284px;max-width:608px;margin:auto;padding:0 16px 16px 16px;border-left:1px solid #969696;border-right:1px solid #969696;background:#e6e6e6}h1,h2{margin:24px 0 16px 0}h1{font-size:26px;line-height:32px}h2,h3{font-size:20px}h3{margin:16px 0}p{margin:4px 0}hr{border:0.5px solid #969696}a{font-weight:bold;text-decoration:none;color:#008cdc}a:hover{color:#00b4ff}ul{margin:8px 0;padding-left:24px}img{height:144px;border:1px solid #969696}img:hover{border:1px solid #c8c8c8}
+</style>
+</head>
+
+<body>
+<div>
+<h1><a href="http://omega.gg/MotionBox/changes/1.3.0.html">Changelog 1.3.0</a></h1>
+
+<h3>Previous: <a href="1.2.0.html">Changelog 1.2.0</a></h3>
+
+<h3>Next: <a href="1.4.0.html">Changelog 1.4.0</a></h3>
+
+<h1><a href="http://omega.gg/Sky">Sky kit</a></h1>
+
+<hr>
+
+<h2>SkCore</h2>
+
+<ul><li><p>Created WCacheFileDelete.</p></li><li><p>Renamed WControllerFileThreadAction to WControllerFileAction.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>Sk: Updated the "C_STR" define.</p></li><li><p>WController: Updated the "init controller" function.</p></li><li><p>WControllerApplication: Added the "set current path" function.</p></li><li><p>WControllerApplication: Added the "read ascii" function.</p></li><li><p>WControllerApplication: Updated the "read codec" function.</p></li><li><p>WControllerFile: Added the "folder name" function.</p></li><li><p>WControllerFile: Updated the "file url" function.</p></li><li><p>WControllerFile: Fixed the "delete folder" function.</p></li><li><p>WControllerXml: Added the "read next url" function.</p></li><li><p>WControllerNetwork: Added the "url scheme" function.</p></li><li><p>WControllerNetwork: Added the "encoded url" functions.</p></li><li><p>WControllerNetwork: Added the "extract head" function.</p></li><li><p>WControllerNetwork: Fixed the "extract image" function.</p></li><li><p>WListId: Updated the "generate id" function.</p></li><li><p>WCache: Added the "get file url" function.</p></li><li><p>WCache: Added the "remove file" event.</p></li><li><p>WCache: Added the "to remove" variable.</p></li></ul>
+
+<h2>SkGui</h2>
+
+<ul><li><p>Created WBackendInterface and WBackendFilter.</p></li><li><p>Renamed WAbstractPlaylist to WPlaylist.</p></li><li><p>Renamed WAbstractTrack to WTrack.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>WControllerView: Added the "compress shot" function.</p></li><li><p>WControllerPlaylist: Added the "backend cover from hub" function.</p></li><li><p>WControllerPlaylist: Updated the "apply source folder" function.</p></li><li><p>WControllerPlaylist: Fixed the "create source" function.</p></li><li><p>WControllerPlaylist: Fixed the "apply source(s)" functions.</p></li><li><p>WControllerPlaylist: Fixed the "loaded" function.</p></li><li><p>WControllerPlaylist: Fixed the "generate source" function.</p></li><li><p>WControllerPlaylist: Fixed the "scan items" function.</p></li><li><p>WControllerPlaylist: Fixed the "url playlist" function.</p></li><li><p>WControllerPlaylistReply: Fixed the "add url" function.</p></li><li><p>WAbstractView: Added the "restore full screen" function.</p></li><li><p>WAbstractView: Updated the "init" function.</p></li><li><p>WAbstractView: Updated the "events" function.</p></li><li><p>WAbstractView: Fixed the "set window icon" function.</p></li><li><p>WView: Updated the "drag and drop" implementation.</p></li><li><p>WView: Fixed the "key release" event.</p></li><li><p>WView: Fixed the "x, y" and "width, height" properties.</p></li><li><p>WResizer: Fixed the "mouse press" event.</p></li><li><p>WDeclarativeTextSvg: Added the "get style" function.</p></li><li><p>WDeclarativePlayer: Added the "apply playlist" function.</p></li><li><p>WDeclarativePlayer: Added the "repeat stop" flag.</p></li><li><p>WDeclarativePlayer: Fixed the "load source" function.</p></li><li><p>WDeclarativePlayer: Fixed the "current bookmark changed" function.</p></li><li><p>WDeclarativePlayer: Fixed the "tab destroyed" function.</p></li><li><p>WDeclarativePlayer: Fixed the "backend" property.</p></li><li><p>WPixmapCache: Updated the "apply size" function.</p></li><li><p>WPixmapCache: Updated the "read image" function.</p></li><li><p>WPixmapCache: Removed the "to delete" variable.</p></li><li><p>WAbstractTabs: Added the "save enabled changed" function.</p></li><li><p>WBackendInterface: Added the "source is video" and "source is audio" functions.</p></li><li><p>WAbstractBackend: Added the "progress" property.</p></li><li><p>WAbstractBackend: Updated the "pause" function.</p></li><li><p>WAbstractBackend: Updated the "set ended" function.</p></li><li><p>WAbstractBackend: Updated the "volume" property.</p></li><li><p>WAbstractBackend: Fixed the "load source" function.</p></li><li><p>WAbstractBackend: Removed the "backend replay" and "backend set repeat" functions.</p></li><li><p>WAbstractHook: Added the "apply source" and "apply current time" functions.</p></li><li><p>WAbstractHook: Updated the "backend" functions.</p></li><li><p>WLibraryFolderRelated: Fixed the "load tracks" function.</p></li><li><p>WPlaylist: Added the "track duration" functions.</p></li><li><p>WPlaylist: Added the "load cover" function.</p></li><li><p>WPlaylist: Removed the "get track const" function.</p></li><li><p>WBackendNet: Added the "is hub" function.</p></li><li><p>WBackendNet: Added the "is search cover" function.</p></li><li><p>WBackendNet: Added the "get track output" function.</p></li></ul>
+
+<h2>SkMedia</h2>
+
+<ul><li><p>WControllerMedia: Updated the "load sources" function.</p></li><li><p>WControllerMedia: Fixed the "clear(s)" functions.</p></li><li><p>WBackendVlc: Added the "apply output" function.</p></li><li><p>WBackendVlc: Updated the "load sources" function.</p></li><li><p>WBackendVlc: Renamed the "update loading" function.</p></li><li><p>WBackendVlc: Fixed the "clear player" function.</p></li><li><p>WBackendVlc: Fixed the "playing" event.</p></li><li><p>WBackendVlc: Fixed the "time changed" event.</p></li><li><p>WVlcEngine: Added the "delete instance" function.</p></li><li><p>WVlcPlayer: Removed the "repeat" property.</p></li></ul>
+
+<h2>SkWeb</h2>
+
+<ul><li>WLoaderWeb: Fixed the "load finished" function.</li></ul>
+
+<h2>SkTorrent</h2>
+
+<ul><li>Created WLoaderTorrent.</li></ul>
+
+<h1></h1>
+
+<ul><li><p>WControllerTorrent: Added the "port" implementation.</p></li><li><p>WControllerTorrent: Updated the "magnet event" function.</p></li><li><p>WControllerTorrent: Fixed the "remove" functions.</p></li><li><p>WBackendTorrent: Created WBackendTorrentItem.</p></li><li><p>WBackendTorrent: Added the "extract last string" function.</p></li><li><p>WBackendTorrent: Added the "create query" function.</p></li><li><p>WBackendTorrent: Updated the "extract playlist" function.</p></li><li><p>WHookTorrent: Updated the "added" function.</p></li><li><p>WHookTorrent: Fixed the "clear" function.</p></li><li><p>WHookTorrent: Fixed the "filter state" function.</p></li><li><p>WTorrentEngine: Added the "delete instance" function.</p></li><li><p>WTorrentEngine: Added the "delete folder" and "delete id" functions.</p></li><li><p>WTorrentEngine: Added the "block" event.</p></li><li><p>WTorrentEngine: Added the "ids" variable.</p></li><li><p>WTorrentEngine: Added the "interval clear" static.</p></li><li><p>WTorrentEngine: Updated the "create" event.</p></li><li><p>WTorrentEngine: Updated the "add" event.</p></li><li><p>WTorrentEngine: Updated the "piece" event.</p></li><li><p>WTorrentEngine: Fixed the "remove" function.</p></li><li><p>WTorrentEngine: Fixed the "seek" event.</p></li></ul>
+
+<h2>SkyComponents</h2>
+
+<ul><li><p>Created ButtonPianoReset.</p></li><li><p>Created LineEditValue.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>Style: Added the "absolute" function.</p></li><li><p>PageSlide: Renamed the "load page" function.</p></li><li><p>WindowScale: Added the "move origin x" and "move origin y" functions.</p></li><li><p>IconLoading: Fixed the "rotation" animation.</p></li><li><p>ButtonPianoFull: Fixed the "get preferred width" function.</p></li><li><p>LineEditLabel: Added the "label width" property.</p></li><li><p>SliderStream: Added the "progress" item.</p></li><li><p>SliderStream: Fixed the "state changed" event.</p></li><li><p>BaseWall: Fixed the "update active" function.</p></li><li><p>WallVideo: Updated the "loading" item.</p></li><li><p>WallVideo: Fixed the "player" item.</p></li><li><p>WallVideo: Fixed the "player back" item.</p></li><li><p>WallVideo: Fixed the "player cover" item.</p></li><li><p>WallVideo: Fixed the "duration" values.</p></li><li><p>WallVideo: Fixed the "audio" property.</p></li><li><p>PlayerBrowser: Added the "area play" item.</p></li><li><p>PlayerBrowser: Updated the "item loading" item.</p></li><li><p>ComponentTabBrowser: Updated the "icon" properties.</p></li><li><p>ComponentWallBookmarkTrack: Updated the "icon" properties.</p></li></ul>
+
+<h2>SkyPresentation</h2>
+
+<ul><li>Created SlideRow and SlideColumn.</li></ul>
+
+<h1></h1>
+
+<ul><li><p>Slides: Added the "play" and "backward, forward" signals.</p></li><li><p>Slides: Fixed the "update step" function.</p></li><li><p>Slides: Fixed the "between" function.</p></li><li><p>SlideText: Added the "font" properties.</p></li><li><p>SlidePlayer: Added the "duration fade in" and "duration fade out" properties.</p></li><li><p>SlidePlayer: Added the "stop source" function.</p></li><li><p>SlidePlayer: Added the "source changed" and "timeA changed" events.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li><p>ButtonPush: Updated the "highlight" gradient.</p></li><li><p>SlidePlayer: Updated the "interval" property.</p></li></ul>
+
+<h2>3rdparty</h2>
+
+<ul><li><p><a href="http://github.com/videolan/vlc">VLC</a>: Updated to version 2.2.6.</p></li><li><p><a href="http://github.com/arvidn/libtorrent">libtorrent</a>: Updated to version 1.1.5.</p></li></ul>
+
+<h1><a href="http://omega.gg/MotionBox">MotionBox</a></h1>
+
+<hr>
+
+<h2>C++</h2>
+
+<ul><li><p>ControllerCore: Added the "argument(s)" functions.</p></li><li><p>ControllerCore: Updated the "apply proxy" function.</p></li><li><p>ControllerCore: Updated the "check url" function.</p></li><li><p>ControllerCore: Updated the "clear cache" function.</p></li><li><p>ControllerCore: Fixed the "load" function.</p></li></ul>
+
+<h2>QML</h2>
+
+<ul><li>Removed ButtonsUpdater.</li></ul>
+
+<h1></h1>
+
+<ul><li><p>Gui: Added the "timer" item.</p></li><li><p>Gui: Added the "pause" function.</p></li><li><p>Gui: Added the "browse" function.</p></li><li><p>Gui: Added the "expand full screen" function.</p></li><li><p>Gui: Added the "clear expand" function.</p></li><li><p>Gui: Updated the "toggle bars" function.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>PanelSearch: Updated the "active changed" event.</p></li><li><p>PanelBrowse: Added the "load playlists" function.</p></li><li><p>PanelBrowse: Updated the "apply button" function.</p></li><li><p>PanelBrowse: Fixed the "line edit" item.</p></li><li><p>PanelBrowse: Fixed the "search" function.</p></li><li><p>PanelBrowse: Fixed the "start search" function.</p></li><li><p>PanelBrowse: Fixed the "track query ended" event.</p></li><li><p>PanelSettings: Updated the "button shuffle" and "button repeat" items.</p></li><li><p>PanelShare: Fixed the "line edit" item.</p></li><li><p>PanelPreview: Updated the "timer" item.</p></li><li><p>PanelPreview: Updated the "details" item.</p></li><li><p>PanelPreview: Updated the "get height" function.</p></li></ul>
+
+<h1></h1>
+
+<ul><li>PageAboutMain: Updated the "Sky" link.</li></ul>
+
+<h1></h1>
+
+<ul><li><p>BarControls: Updated the "slider stream" item.</p></li><li><p>LineEditSearch: Removed the "update hub" function.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li>SliderStream: Added the "interval" properties.</li></ul>
+
+<h2>Content</h2>
+
+<ul><li>Pictures: Added the "torrent" icon.</li></ul>
+
+<h1>Authors</h1>
+
+<hr>
+
+<ul><li>Benjamin Arnaud aka <a href="http://bunjee.me">bunjee</a> | <a href="mailto:bunjee@omega.gg">bunjee@omega.gg</a>.</li></ul>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+19:33:16.937: CPU Name: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+19:33:16.937: CPU Speed: 2700.171MHz
+19:33:16.937: Physical Cores: 4, Logical Cores: 8
+19:33:16.937: Physical Memory: 15858MB Total, 5116MB Free
+19:33:16.937: Kernel Version: Linux 5.9.1-arch1-1
+19:33:16.937: Distribution: "Arch Linux" Unknown
+19:33:16.938: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.20.9
+19:33:16.939: Portable mode: false
+19:33:17.008: OBS 26.0.2-2 (linux)
+19:33:17.008: ---------------------------------
+19:33:17.009: ---------------------------------
+19:33:17.009: audio settings reset:
+19:33:17.009: 	samples per sec: 48000
+19:33:17.009: 	speakers:        2
+19:33:17.011: ---------------------------------
+19:33:17.011: Initializing OpenGL...
+19:33:17.130: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 620 (KBL GT2)
+19:33:17.130: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 20.2.0, shading language 4.60
+19:33:17.148: ---------------------------------
+19:33:17.149: video settings reset:
+19:33:17.149: 	base resolution:   1920x1080
+19:33:17.149: 	output resolution: 1920x1080
+19:33:17.149: 	downscale filter:  Bicubic
+19:33:17.149: 	fps:               30/1
+19:33:17.149: 	format:            NV12
+19:33:17.149: 	YUV mode:          709/Partial
+19:33:17.149: NV12 texture support not available
+19:33:17.155: Audio monitoring device:
+19:33:17.155: 	name: Default
+19:33:17.155: 	id: default
+19:33:17.155: ---------------------------------
+19:33:17.157: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+19:33:17.258: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+19:33:17.258: No blackmagic support
+19:33:17.288: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+19:33:17.288: 
+19:33:17.288: FFMPEG VAAPI supported
+19:33:17.314: Failed to load 'en-GB' text for module: 'v4l2sink.so'
+19:33:17.322: VLC found, VLC video source enabled
+19:33:17.322: ---------------------------------
+19:33:17.322:   Loaded Modules:
+19:33:17.322:     vlc-video.so
+19:33:17.322:     v4l2sink.so
+19:33:17.322:     text-freetype2.so
+19:33:17.322:     rtmp-services.so
+19:33:17.322:     obs-x264.so
+19:33:17.322:     obs-transitions.so
+19:33:17.322:     obs-outputs.so
+19:33:17.322:     obs-libfdk.so
+19:33:17.322:     obs-filters.so
+19:33:17.322:     obs-ffmpeg.so
+19:33:17.322:     linux-v4l2.so
+19:33:17.322:     linux-pulseaudio.so
+19:33:17.322:     linux-jack.so
+19:33:17.322:     linux-decklink.so
+19:33:17.322:     linux-capture.so
+19:33:17.322:     linux-alsa.so
+19:33:17.322:     image-source.so
+19:33:17.322:     frontend-tools.so
+19:33:17.322:     decklink-ouput-ui.so
+19:33:17.322: ---------------------------------
+19:33:17.322: ==== Startup complete ===============================================
+19:33:17.326: All scene data cleared
+19:33:17.327: ------------------------------------------------
+19:33:17.336: pulse-input: Server name: 'pulseaudio 13.99.2-13-g7f4d7'
+19:33:17.336: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+19:33:17.336: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor'
+19:33:17.336: [Loaded global audio device]: 'Desktop Audio'
+19:33:17.336: pulse-input: Server name: 'pulseaudio 13.99.2-13-g7f4d7'
+19:33:17.337: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+19:33:17.337: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+19:33:17.337: [Loaded global audio device]: 'Mic/Aux'
+19:33:17.337:     - filter: 'Noise Gate' (noise_gate_filter)
+19:33:17.338: xshm-input: Geometry 1920x1080 @ 0,0
+19:33:17.359: v4l2-input: Start capture from /dev/video0
+19:33:17.360: v4l2-input: Unable to set input 0
+19:33:17.360: v4l2-input: Initialization failed
+19:33:17.360: Switched to scene 'Video'
+19:33:17.360: ------------------------------------------------
+19:33:17.360: Loaded scenes:
+19:33:17.360: - scene 'Video':
+19:33:17.362:     - source: 'Camera' (v4l2_input)
+19:33:17.362:     - source: 'Screen Capture (XSHM)' (xshm_input)
+19:33:17.362:     - source: 'Be there in a sec!' (text_ft2_source_v2)
+19:33:17.362: ------------------------------------------------
+19:33:17.874: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Mic/Aux)
+19:33:17.874: 

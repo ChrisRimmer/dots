@@ -1,0 +1,89 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style rel="stylesheet" media="screen">
+html{font:14px / 24px Helvetica, Arial, sans-serif}body{margin:0px;color:#161616;background:#b4b4b4}div{overflow:hidden;min-width:284px;max-width:608px;margin:auto;padding:0 16px 16px 16px;border-left:1px solid #969696;border-right:1px solid #969696;background:#e6e6e6}h1,h2{margin:24px 0 16px 0}h1{font-size:26px;line-height:32px}h2,h3{font-size:20px}h3{margin:16px 0}p{margin:4px 0}hr{border:0.5px solid #969696}a{font-weight:bold;text-decoration:none;color:#008cdc}a:hover{color:#00b4ff}ul{margin:8px 0;padding-left:24px}img{height:144px;border:1px solid #969696}img:hover{border:1px solid #c8c8c8}
+</style>
+</head>
+
+<body>
+<div>
+<h1><a href="http://omega.gg/MotionBox/changes/1.1.2.html">Changelog 1.1.2</a></h1>
+
+<h3>Previous: <a href="1.1.1.html">Changelog 1.1.1</a></h3>
+
+<h3>Next: <a href="1.2.0.html">Changelog 1.2.0</a></h3>
+
+<h1><a href="http://omega.gg/Sky">Sky kit</a></h1>
+
+<hr>
+
+<h2>SkCore</h2>
+
+<ul><li><p>WController: Removed the "name" parameter.</p></li><li><p>WControllerApplication: Added the "current date string" function.</p></li><li><p>WControllerApplication: Fixed the "init controller" function.</p></li><li><p>WControllerApplication: Fixed the "extract arguments" function.</p></li><li><p>WControllerFile, WCache: Added the "write file" and the "add file" functions.</p></li><li><p>WControllerNetwork: Added the "strip json" function.</p></li><li><p>WControllerNetwork: Fixed the "generate url" function.</p></li><li><p>WFileWatcher: Added the "clear paths" function.</p></li></ul>
+
+<h2>SkGui</h2>
+
+<ul><li>Created WDeclarativeTextSvg.</li></ul>
+
+<h1></h1>
+
+<ul><li><p>WControllerView: Added a "scale delay" property.</p></li><li><p>WControllerPlaylist: Added symbolic link forwarding.</p></li><li><p>WControllerPlaylist: Added track query support.</p></li><li><p>WControllerPlaylist: Fixed the "apply source folder" function</p></li><li><p>WControllerPlaylistData: Fixed the "add file" function.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>WMainViewResizer: Added a "size" property.</p></li><li><p>WDeclarativeImage(s): Fixed the "smooth" property.</p></li><li><p>WDeclarativePlayer: Added an "ended" signal.</p></li><li><p>WDeclarativePlayer: Fixed the "ended" event.</p></li><li><p>WDeclarativeAnimated: Fixed running after "step changed" event.</p></li><li><p>WDeclarativeAnimated: Fixed the "loop" property.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>WModelRange: Updated the default values.</p></li><li><p>WAbstractBackend: Added the "clear" function.</p></li><li><p>WAbstractBackend: Updated the "volume" from percent to value.</p></li><li><p>WAbstractBackend: Fixed the "load source" function.</p></li><li><p>WPlaylist: Added the "load cover(s)" functions.</p></li><li><p>WBackendNet: Added the "check query" and the "extract query" functions.</p></li></ul>
+
+<h2>SkMedia</h2>
+
+<ul><li><p>WBackendVlc: Added the "create shader" and the "delete shader" functions.</p></li><li><p>WBackendVlc: Fixed the "set source" function.</p></li><li><p>WVlcPlayer: Added an "options" property.</p></li></ul>
+
+<h2>SkyComponents</h2>
+
+<ul><li><p>Created ButtonPushOverlay.</p></li><li><p>Created LineEditBox.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>Window: Added a "resizer size" property.</p></li><li><p>SliderStream: Removed wheel input.</p></li><li><p>ItemSlide: Fixed the transition script.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li><p>Window: Updated the border size.</p></li><li><p>Icons: Updated the color.</p></li><li><p>ScrollBar: Removed the handle icon.</p></li><li><p>PlayerBrowser: Updated buttons to ButtonPushIcon.</p></li></ul>
+
+<h2>3rdparty</h2>
+
+<ul><li><a href="http://github.com/videolan/vlc">VLC</a>: Updated to version 2.2.4.</li></ul>
+
+<h1><a href="http://omega.gg/MotionBox">MotionBox</a></h1>
+
+<hr>
+
+<h2>C++</h2>
+
+<ul><li><p>ControllerCore: Added the "preload" function.</p></li><li><p>ControllerCore: Fixed the "text is url" function.</p></li></ul>
+
+<h2>QML</h2>
+
+<ul><li><p>Gui: Fixed the "get current playlist" function.</p></li><li><p>BarTop: Fixed the ItemTabMini current tab.</p></li><li><p>PanelTracks: Removed the title button for local playlists.</p></li><li><p>PanelBrowse: Fixed the search functions.</p></li><li><p>ListFolder, ListPlaylist: Fixed scrolling.</p></li><li><p>ListPlaylist: Fixed the "tracks moved" and the "tracks removed" events.</p></li><li><p>ButtonsBrowse: Added the focus clear.</p></li><li><p>ContextualPage Playlist: Fixed the "Play" item visibility for the current playlist.</p></li><li><p>ItemTabMini: Fixed the icon fill mode.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li><p>LineEditClear: Updated to LineEditBox.</p></li><li><p>LineEditSearch: Updated the "loading" icon size.</p></li><li><p>BarTop: Updated the "New tab" button margin.</p></li><li><p>BarControls: Updated "playback" buttons to ButtonPushIcon.</p></li><li><p>PanelBrowse: Updated the "Clear browse" button margin.</p></li></ul>
+
+<h1>Authors</h1>
+
+<hr>
+
+<ul><li>Benjamin Arnaud aka <a href="http://bunjee.me">bunjee</a> | <a href="mailto:bunjee@omega.gg">bunjee@omega.gg</a>.</li></ul>
+</div>
+</body>
+
+</html>

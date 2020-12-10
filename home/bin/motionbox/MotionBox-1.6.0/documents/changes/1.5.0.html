@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style rel="stylesheet" media="screen">
+html{font:14px / 24px Helvetica, Arial, sans-serif}body{margin:0px;color:#161616;background:#b4b4b4}div{overflow:hidden;min-width:284px;max-width:608px;margin:auto;padding:0 16px 16px 16px;border-left:1px solid #969696;border-right:1px solid #969696;background:#e6e6e6}h1,h2{margin:24px 0 16px 0}h1{font-size:26px;line-height:32px}h2,h3{font-size:20px}h3{margin:16px 0}p{margin:4px 0}hr{border:0.5px solid #969696}a{font-weight:bold;text-decoration:none;color:#008cdc}a:hover{color:#00b4ff}ul{margin:8px 0;padding-left:24px}img{height:144px;border:1px solid #969696}img:hover{border:1px solid #c8c8c8}
+</style>
+</head>
+
+<body>
+<div>
+<h1><a href="http://omega.gg/MotionBox/changes/1.5.0.html">Changelog 1.5.0</a></h1>
+
+<h3>Previous: <a href="1.4.0.html">Changelog 1.4.0</a></h3>
+
+<h3>Next: <a href="1.6.0.html">Changelog 1.6.0</a></h3>
+
+<h1><a href="http://omega.gg/MotionBox">MotionBox</a></h1>
+
+<hr>
+
+<h2>Overview</h2>
+
+<ul><li><p>Add light themes.</p></li><li><p>Support the 64 bit architecture by default.</p></li><li><p>Add feeds and tracks history.</p></li></ul>
+
+<h2>C++</h2>
+
+<ul><li>DataOnline: Update the 'ONLINE_PATH' variable.</li></ul>
+
+<h2>QML</h2>
+
+<ul><li>Remove ButtonLogoBorders.</li></ul>
+
+<h1></h1>
+
+<ul><li><p>Gui: Update track selection when player stops.</p></li><li><p>Gui: Update tab behavior.</p></li><li><p>Gui: Update the 'pRestoreMiniA' function.</p></li><li><p>Gui: Fix 'play(s)' functions.</p></li><li><p>Gui: Fix the 'openSource' function.</p></li><li><p>Gui: Remove the 'openFolder' function.</p></li><li><p>Splash: Update implementation.</p></li><li><p>BarWindowApplication: Add 'onBefore(s)' functions.</p></li><li><p>BarWindowApplication: Add 'pRestoreMaximize' function.</p></li><li><p>BarTop: Add the 'discover' button.</p></li><li><p>BarTop: Add the 'playlist' property.</p></li><li><p>PanelApplication: Update page buttons.</p></li><li><p>PanelSearch: Start the search when you click a backend.</p></li><li><p>PanelAdd: Fix the 'maximum height' property.</p></li><li><p>LineEditSearch: Update the 'default text' behavior.</p></li><li><p>ListFolder: Fix the 'folder' events.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li>Enable 'light' design by default.</li></ul>
+
+<h1><a href="http://omega.gg/Sky">Sky kit</a></h1>
+
+<hr>
+
+<h2>Qt</h2>
+
+<ul><li>Change QUrl(s) to QString(s) to improve comparisons.</li></ul>
+
+<h2>SkCore</h2>
+
+<ul><li><p>WControllerFile: Add the 'folderUrl' function.</p></li><li><p>WControllerFile: Update the 'toLocal, toString' functions.</p></li><li><p>WControllerFile: Fix the 'file url' functions.</p></li><li><p>WControllerFile: Fix the 'toLocalFile' function.</p></li><li><p>WControllerScript: Add 'QJSEngine' implementation.</p></li><li><p>WRemoteTimeout: Fix the 'timeout' function.</p></li></ul>
+
+<h2>SkGui</h2>
+
+<ul><li><p>WControllerPlaylist: Update the 'query' implementation.</p></li><li><p>WControllerPlaylist: Fix the 'loaded' function.</p></li><li><p>WControllerPlaylistData: Update the 'applyHtml' function.</p></li><li><p>WAbstractView: Add the 'on close' function.</p></li><li><p>WAbstractView: Update the 'task bar' workaround.</p></li><li><p>WView: Add the 'on close' function.</p></li><li><p>WView: Fix the 'update flags' function.</p></li><li><p>WDeclarativeImageBase: Fix the 'set filter' function.</p></li><li><p>WDeclarativeImageBase: Fix the 'onFilterUpdated' function.</p></li><li><p>WDeclarativeImage(s): Fix the 'scale' implementation.</p></li><li><p>WDeclarativeTextSvg: Fix the 'get width' implementation.</p></li><li><p>WPlaylist: Add the 'move(s)' functions.</p></li></ul>
+
+<h2>SkMedia</h2>
+
+<ul><li><p>WBackendVlc: Update the shaders implementation.</p></li><li><p>WVlcEngine: Add the 'avcodec-fast' option.</p></li></ul>
+
+<h2>SkTorrent</h2>
+
+<ul><li><p>Update implementation to the 1.2.0 API.</p></li><li><p>WHookTorrent: Update the 'skip' behavior for 'avi' files.</p></li><li><p>WHookTorrent: Fix the 'read' function.</p></li><li><p>WBackendTorrent: Update the 'sort' implementation.</p></li><li><p>WTorrentEngine: Update torrent settings.</p></li><li><p>WTorrentEngine: Add the 'get index' function.</p></li><li><p>WTorrentEngine: Fix the 'remove' function.</p></li><li><p>WTorrentEngine: Fix the 'select file ' function.</p></li><li><p>WTorrentEngine: Fix the 'handle id' variables.</p></li></ul>
+
+<h2>SkyComponents</h2>
+
+<ul><li><p>Create ItemWipe(s).</p></li><li><p>Rename ScrollAreaVertical to ScrollArea.</p></li><li><p>Rename ScrollBarVertical to ScrollBar.</p></li><li><p>Rename ContextualComponent to ComponentContextual.</p></li><li><p>Remove SizeHint.</p></li><li><p>PanelImage: Add the 'image background' alias.</p></li><li><p>ScrollBar: Remove buttons.</p></li><li><p>SliderStream: Update the 'left' button.</p></li><li><p>TabsBrowser: Add 'onBefore(s)' functions.</p></li><li><p>WallVideo: Update the 'player back' item.</p></li><li><p>WallVideo: Update the 'cover' behavior.</p></li><li><p>ComponentTabBrowser, ComponentWallBookmarkTrack: Update the 'icon' source and caching.</p></li></ul>
+
+<h2>SkyPresentation</h2>
+
+<ul><li>BaseLogo: Update to 'flat' design.</li></ul>
+
+<h2>Style</h2>
+
+<ul><li><p>Add 'night' design.</p></li><li><p>Add 'light' design.</p></li><li><p>Enable 'light' design by default.</p></li></ul>
+
+<h2>3rdparty</h2>
+
+<ul><li><p><a href="https://sourceforge.net/projects/mingw">MinGW</a>: Update to 7.3.0.</p></li><li><p><a href="http://download.qt.io/official_releases/qt">Qt</a>: Update to 5.12.0.</p></li><li><p><a href="http://github.com/videolan/vlc">VLC</a>: Update to 3.0.6.</p></li><li><p><a href="http://github.com/arvidn/libtorrent">libtorrent</a>: Update to 1.1.12.</p></li></ul>
+
+<h1>Authors</h1>
+
+<hr>
+
+<ul><li>Benjamin Arnaud aka <a href="http://bunjee.me">bunjee</a> | <a href="mailto:bunjee@omega.gg">bunjee@omega.gg</a>.</li></ul>
+</div>
+</body>
+
+</html>

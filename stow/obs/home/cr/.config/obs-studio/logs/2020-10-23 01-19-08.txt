@@ -1,0 +1,90 @@
+01:19:08.038: CPU Name: Intel(R) Core(TM) i5-8250U CPU @ 1.60GHz
+01:19:08.038: CPU Speed: 1511.646MHz
+01:19:08.040: Physical Cores: 4, Logical Cores: 8
+01:19:08.040: Physical Memory: 15858MB Total, 3179MB Free
+01:19:08.040: Kernel Version: Linux 5.9.1-arch1-1
+01:19:08.040: Distribution: "Arch Linux" Unknown
+01:19:08.041: Window System: X11.0, Vendor: The X.Org Foundation, Version: 1.20.9
+01:19:08.043: Portable mode: false
+01:19:08.105: OBS 26.0.2-2 (linux)
+01:19:08.105: ---------------------------------
+01:19:08.105: ---------------------------------
+01:19:08.105: audio settings reset:
+01:19:08.105: 	samples per sec: 48000
+01:19:08.105: 	speakers:        2
+01:19:08.107: ---------------------------------
+01:19:08.107: Initializing OpenGL...
+01:19:08.225: Loading up OpenGL on adapter Intel Mesa Intel(R) UHD Graphics 620 (KBL GT2)
+01:19:08.225: OpenGL loaded successfully, version 4.6 (Core Profile) Mesa 20.2.0, shading language 4.60
+01:19:08.242: ---------------------------------
+01:19:08.242: video settings reset:
+01:19:08.242: 	base resolution:   1920x1080
+01:19:08.242: 	output resolution: 1920x1080
+01:19:08.242: 	downscale filter:  Bicubic
+01:19:08.242: 	fps:               30/1
+01:19:08.242: 	format:            NV12
+01:19:08.242: 	YUV mode:          709/Partial
+01:19:08.242: NV12 texture support not available
+01:19:08.247: Audio monitoring device:
+01:19:08.247: 	name: Default
+01:19:08.247: 	id: default
+01:19:08.247: ---------------------------------
+01:19:08.249: Failed to load 'en-US' text for module: 'decklink-ouput-ui.so'
+01:19:08.342: A DeckLink iterator could not be created.  The DeckLink drivers may not be installed
+01:19:08.342: No blackmagic support
+01:19:08.350: os_dlopen(libnvidia-encode.so.1->libnvidia-encode.so.1): libnvidia-encode.so.1: cannot open shared object file: No such file or directory
+01:19:08.350: 
+01:19:08.350: FFMPEG VAAPI supported
+01:19:08.357: Failed to load 'en-GB' text for module: 'v4l2sink.so'
+01:19:08.360: VLC found, VLC video source enabled
+01:19:08.361: ---------------------------------
+01:19:08.361:   Loaded Modules:
+01:19:08.361:     vlc-video.so
+01:19:08.361:     v4l2sink.so
+01:19:08.361:     text-freetype2.so
+01:19:08.361:     rtmp-services.so
+01:19:08.361:     obs-x264.so
+01:19:08.361:     obs-transitions.so
+01:19:08.361:     obs-outputs.so
+01:19:08.361:     obs-libfdk.so
+01:19:08.361:     obs-filters.so
+01:19:08.361:     obs-ffmpeg.so
+01:19:08.361:     linux-v4l2.so
+01:19:08.361:     linux-pulseaudio.so
+01:19:08.361:     linux-jack.so
+01:19:08.361:     linux-decklink.so
+01:19:08.361:     linux-capture.so
+01:19:08.361:     linux-alsa.so
+01:19:08.361:     image-source.so
+01:19:08.361:     frontend-tools.so
+01:19:08.361:     decklink-ouput-ui.so
+01:19:08.361: ---------------------------------
+01:19:08.361: ==== Startup complete ===============================================
+01:19:08.365: All scene data cleared
+01:19:08.365: ------------------------------------------------
+01:19:08.373: pulse-input: Server name: 'pulseaudio 13.99.2-13-g7f4d7'
+01:19:08.373: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+01:19:08.374: pulse-input: Started recording from 'alsa_output.pci-0000_00_1f.3.analog-stereo.monitor'
+01:19:08.374: [Loaded global audio device]: 'Desktop Audio'
+01:19:08.374: pulse-input: Server name: 'pulseaudio 13.99.2-13-g7f4d7'
+01:19:08.374: pulse-input: Audio format: s16le, 48000 Hz, 2 channels
+01:19:08.374: pulse-input: Started recording from 'alsa_input.pci-0000_00_1f.3.analog-stereo'
+01:19:08.374: [Loaded global audio device]: 'Mic/Aux'
+01:19:08.374:     - filter: 'Noise Gate' (noise_gate_filter)
+01:19:08.374: [Media Source 'Media Source']: settings:
+01:19:08.374: 	input:                   /home/cr/video/walls/9d5kFG7G0Yk.mp4
+01:19:08.374: 	input_format:            (null)
+01:19:08.374: 	speed:                   100
+01:19:08.374: 	is_looping:              yes
+01:19:08.374: 	is_hw_decoding:          yes
+01:19:08.374: 	is_clear_on_media_end:   yes
+01:19:08.374: 	restart_on_activate:     yes
+01:19:08.374: 	close_when_inactive:     no
+01:19:08.375: Switched to scene 'Video'
+01:19:08.376: ------------------------------------------------
+01:19:08.376: Loaded scenes:
+01:19:08.376: - scene 'Video':
+01:19:08.376:     - source: 'Media Source' (ffmpeg_source)
+01:19:08.376: ------------------------------------------------
+01:19:08.929: adding 42 milliseconds of audio buffering, total audio buffering is now 42 milliseconds (source: Mic/Aux)
+01:19:08.929: 

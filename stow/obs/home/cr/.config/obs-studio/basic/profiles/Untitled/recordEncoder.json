@@ -1,0 +1,4 @@
+{
+    "crf": 22,
+    "rate_control": "CRF"
+}

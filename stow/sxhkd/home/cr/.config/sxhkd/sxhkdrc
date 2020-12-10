@@ -1,0 +1,47 @@
+XF86Audio{Prev,Next,Play}
+	mpc -q {prev,next,toggle}
+
+super + {less,greater}
+	mpc -q {prev,next}
+
+{F6,F7}
+	pactl set-sink-volume @DEFAULT_SINK@ {-,+}3dB
+
+shift + {F6,F7}
+	pactl set-sink-volume @DEFAULT_SINK@ {0%,0dB}
+
+XF86AudioMute
+	pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+XF86MonBrightness{Down,Up}
+	xbacklight -{dec,inc} 10
+
+XF86Display
+	xrandr --auto; autorandr -c
+
+super + r
+	rofi -show run -theme gruvbox-dark
+
+super + e
+	rofimoji --rofi-args "-theme gruvbox-dark"
+
+super + u
+	 rofi -show unicode -modi 'unicode:~/.config/rofiemoji-rofiunicode/rofiunicode.sh,emoji:~/.config/rofiemoji-rofiunicode/rofiemoji.sh'
+
+super + p
+	scrot -s
+
+super + shift + p
+	scrot -w
+
+super + s ; l
+	glitchlock
+
+super + s ; r
+	pkill -SIGUSR1 sxhkd
+
+super + Return
+	~/projects/suckless/st/st
+
+super + d; {j,k}
+	xrandr --output HDMI1 --auto --{right-of eDP1,off}

@@ -1,0 +1,133 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style rel="stylesheet" media="screen">
+html{font:14px / 24px Helvetica, Arial, sans-serif}body{margin:0px;color:#161616;background:#b4b4b4}div{overflow:hidden;min-width:284px;max-width:608px;margin:auto;padding:0 16px 16px 16px;border-left:1px solid #969696;border-right:1px solid #969696;background:#e6e6e6}h1,h2{margin:24px 0 16px 0}h1{font-size:26px;line-height:32px}h2,h3{font-size:20px}h3{margin:16px 0}p{margin:4px 0}hr{border:0.5px solid #969696}a{font-weight:bold;text-decoration:none;color:#008cdc}a:hover{color:#00b4ff}ul{margin:8px 0;padding-left:24px}img{height:144px;border:1px solid #969696}img:hover{border:1px solid #c8c8c8}
+</style>
+</head>
+
+<body>
+<div>
+<h1><a href="http://omega.gg/MotionBox/changes/1.2.0.html">Changelog 1.2.0</a></h1>
+
+<h3>Previous: <a href="1.1.2.html">Changelog 1.1.2</a></h3>
+
+<h3>Next: <a href="1.3.0.html">Changelog 1.3.0</a></h3>
+
+<h3>Video: <a href="http://youtube.com/watch?v=7TQfJMvjFTY">MotionBox 1.2.0</a></h3>
+
+<ul><li><p>Youtube: <a href="http://youtube.com/watch?v=7TQfJMvjFTY">youtube.com/watch?v=T4GH8k_mHc4</a></p></li><li><p>Vimeo: <a href="http://vimeo.com/210149743">vimeo.com/139088877</a></p></li><li><p>Dailymotion: <a href="http://dailymotion.com/video/x5gffic">dailymotion.com/video/x5d5ll4</a></p></li></ul>
+
+<h1><a href="http://omega.gg/Sky">Sky kit</a></h1>
+
+<hr>
+
+<h2>SkCore</h2>
+
+<ul><li><p>WControllerApplication: Added the "file exists" function.</p></li><li><p>WControllerApplication: Added the "icon" property.</p></li><li><p>WControllerApplication: Added the "osLinux" property.</p></li><li><p>WControllerApplication: Fixed the "read codec" function.</p></li><li><p>WControllerApplication: Fixed the "text width" function and parameters.</p></li><li><p>WControllerApplication: Fixed the "icon" property.</p></li><li><p>WControllerFile: Added the "exists" function.</p></li><li><p>WControllerFile: Fixed the "file path" function.</p></li><li><p>WControllerFile: Fixed the "to local file" and "to string" functions.</p></li><li><p>WControllerFile: Fixed the "file watchers" timer.</p></li><li><p>WCache: Fixed the "is empty" property.</p></li><li><p>WFileWatcher: Fixed the "check change" function.</p></li></ul>
+
+<h2>SkGui</h2>
+
+<ul><li><p>Created WAbstractView.</p></li><li><p>Created WDeclarativeBorderGrid.</p></li><li><p>Renamed WMainView to WView.</p></li><li><p>Renamed WMainViewResizer to WViewResizer.</p></li><li><p>Renamed WMainViewDrag to WViewDrag.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>WControllerView: Added the "compress shots" function.</p></li><li><p>WControllerView: Added the "opengl" property.</p></li><li><p>WControllerView: Updated the "item shot" functions.</p></li><li><p>WControllerPlaylist: Added the audio support.</p></li><li><p>WControllerPlaylist: Added the "source is video" and "source is audio" function.</p></li><li><p>WControllerPlaylistQuery: Added the "backend" variable.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>WApplication: Added the "instance" parameter.</p></li><li><p>WApplication: Removed the "raster" on Linux.</p></li><li><p>WWindow: Added the "set window snap" and "set window maximize" functions.</p></li><li><p>WWindow: Updated the "icon" property.</p></li><li><p>WWindow: Fixed the "window" flags.</p></li><li><p>WWindow: Removed the "show" functions.</p></li><li><p>WView: Added the "get geometry" function.</p></li><li><p>WView: Added a workaround to undock the window.</p></li><li><p>WView: Updated the "update mouse" function.</p></li><li><p>WView: Fixed the "maximize" and "full screen" properties.</p></li><li><p>WView: Fixed the default geometry.</p></li><li><p>WView: Fixed the "show" event.</p></li><li><p>WView: Fixed the "take shot" function.</p></li><li><p>WView: Removed the "update minimum size" and "size hint" functions.</p></li><li><p>WView: Removed the "auto size" property.</p></li><li><p>WResizer: Added the Linux support.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>WDeclarativeImageBase: Updated the "set item shot" function.</p></li><li><p>WDeclarativeImageBase: Updated the "asynchronous" property.</p></li><li><p>WDeclarativeImage(s), WDeclarativeTextSvg: Added the "apply scale" function.</p></li><li><p>WDeclarativeTextSvg: Added the "width" and "height" properties.</p></li><li><p>WDeclarativeTextSvg: Added the "margin(s)" properties.</p></li><li><p>WDeclarativeTextSvg: Fixed the "get rectangle" function.</p></li><li><p>WPixmapCache: Updated the "get size(s)" and "get pixmap scaled" functions.</p></li><li><p>WPixmapCache: Fixed the "remove data" function.</p></li><li><p>WPixmapCache: Removed the "get source file" function.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>WAbstractBackend: Added the "output" properties.</p></li><li><p>WAbstractBackend: Added the "is video" and "is audio" properties.</p></li><li><p>WAbstractBackend: Added the "clear current time" function.</p></li><li><p>WLibraryItem: Fixed the "load query" and "reload query" functions.</p></li><li><p>WPlaylist: Added the "track query ended" signal.</p></li><li><p>WTabTrack: Updated the "save state" function.</p></li><li><p>WBackendNet: Added the "is audio" function.</p></li><li><p>WBackendNet: Added the "apply query" functions.</p></li><li><p>WBackendNet: Added the "query failed" function.</p></li></ul>
+
+<h2>SkMedia</h2>
+
+<ul><li><p>WBackendVlc: Added the Linux support.</p></li><li><p>WBackendVlc: Added the "set output" function.</p></li><li><p>WBackendVlc: Added the "started" and "mute" variables.</p></li><li><p>WBackendVlc: Updated the "set output" and "set quality" functions.</p></li><li><p>WBackendVlc: Fixed the video size.</p></li><li><p>WBackendVlc: Fixed the "replay" function.</p></li><li><p>WBackendVlc: Updated OpenGL functions to integer.</p></li><li><p>WVlcEngine: Added an "instance" check.</p></li><li><p>WVlcEngine: Updated the VLC parameters.</p></li><li><p>WVlcEngine: Removed the "instance" property.</p></li><li><p>WVlcPlayer: Added the "output" property.</p></li></ul>
+
+<h2>QML</h2>
+
+<ul><li>Created the SkyPresentation module.</li></ul>
+
+<h2>SkyComponents</h2>
+
+<ul><li>Removed BarTitleTiny.</li></ul>
+
+<h1></h1>
+
+<ul><li><p>Window: Removed the default icon.</p></li><li><p>BarWindow: Updated the icon path.</p></li><li><p>WallVideo: Added the "player back" item.</p></li><li><p>WallVideo: Fixed the "completed" event.</p></li><li><p>WallVideo: Fixed the "player" item.</p></li><li><p>ItemSlide: Fixed the "item image" states.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>Icon: Renamed the "style" property.</p></li><li><p>Icon: Renamed the "style size" property.</p></li><li><p>Icon: Renamed the "image style" alias.</p></li><li><p>Icon: Removed the "icon width" and "icon height" properties.</p></li><li><p>Panel: Updated the "wheel enabled" value.</p></li><li><p>PanelContextual: Removed the gradient.</p></li><li><p>BaseButton: Removed the "check icon" property.</p></li><li><p>ButtonCheck: Added the "checkable" alias.</p></li><li><p>ButtonCheck: Updated the "enabled" conditions.</p></li><li><p>LabelRoundInfo: Updated the border filter.</p></li><li><p>BaseLineEdit: Updated the "padding" value.</p></li><li><p>Slider: Added the "width" default value.</p></li><li><p>Slider: Updated the border filter.</p></li><li><p>ItemList, ItemTab, ItemWall, Tooltip: Updated the "source size" value.</p></li><li><p>ComponentWallBookmarkTrack: Fixed the "logo margin" property.</p></li></ul>
+
+<h2>SkyPresentation</h2>
+
+<ul><li><p>Created SlideRectangle.</p></li><li><p>Created SlideTextLeft(s) and SlideTextRight(s).</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>Slides: Added the "before, after, between, from" functions.</p></li><li><p>Slides: Fixed the "slide" function.</p></li><li><p>Slides: Removed the "fade" property.</p></li><li><p>Slide(s): Fixed the "slide" conditions.</p></li><li><p>SlideFrame: Fixed the "size" property.</p></li><li><p>SlideText(s): Fixed the "margin(s)" properties.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li><p>Panel: Updated the background color.</p></li><li><p>ContextualCategory: Updated the background gradient.</p></li><li><p>ContextualCategory: Updated the text size.</p></li><li><p>ButtonStream, LabelStream: Updated the text to bold.</p></li></ul>
+
+<h1></h1>
+
+<ul><li>Slides: Updated the border size.</li></ul>
+
+<h2>Scripts</h2>
+
+<ul><li>Created 3rdparty.</li></ul>
+
+<h1><a href="http://omega.gg/MotionBox">MotionBox</a></h1>
+
+<hr>
+
+<h2>C++</h2>
+
+<ul><li><p>ControllerCore: Added the "playlist" controller.</p></li><li><p>ControllerCore: Updated the default "icon".</p></li><li><p>ControllerCore: Removed the "preload" function.</p></li><li><p>ControllerCore: Fixed the "storage" path.</p></li><li><p>DataLocal: Added the "speed" and "output" properties.</p></li><li><p>DataLocal: Removed the "set mini size" function.</p></li><li><p>DataOnline: Updated the "online" path.</p></li></ul>
+
+<h2>QML</h2>
+
+<ul><li><p>Main: Updated the default icon.</p></li><li><p>StyleApplication: Removed the "restore minimum" function.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>Gui: Added the "open file" function.</p></li><li><p>Gui: Updated the "Mini Mode" and "maximize window" shortcuts.</p></li><li><p>Gui: Updated the "timer load" triggered event.</p></li><li><p>Gui: Updated the "fade out" event.</p></li><li><p>Gui: Fixed the "restore mini" function.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>BarWindowApplication: Added the "button mini" alias.</p></li><li><p>BarWindowApplication: Added highlight to the "Mini Mode" button.</p></li><li><p>BarTop: Updated the icon path.</p></li><li><p>BarTop: Fixed the "open tab" function.</p></li><li><p>BarControls: Removed the "container" item.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>Panel(s): Updated the BarTitleTiny to BarTitleSmall.</p></li><li><p>PanelBrowse: Added the "track query ended" event.</p></li><li><p>PanelBrowse: Fixed the search reset value.</p></li><li><p>PanelRelated: Fixed the refresh timer.</p></li><li><p>PanelRelated: Removed the "update tab" function.</p></li><li><p>PanelSearch: Fixed the "scroll hubs" item.</p></li><li><p>PanelCover, PanelPreview: Updated the "source size" value.</p></li><li><p>PanelCover: Fixed the "icon" item.</p></li><li><p>PanelAdd: Updated the title.</p></li><li><p>PanelAdd: Updated the close button to ButtonPianoIcon.</p></li><li><p>PanelSettings: Added the "output" and "speed" items.</p></li></ul>
+
+<h1></h1>
+
+<ul><li><p>ContextualPages: Added the "Browse" item.</p></li><li><p>ContextualPages: Updated items order.</p></li><li><p>ContextualPage Track(s): Removed the "Play" item.</p></li><li><p>ButtonsUpdater: Updated the "clicked" event.</p></li><li><p>ItemTabMini: Updated the "tab" default value.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li><p>Panel(s): Updated the background color.</p></li><li><p>PanelSettings, PanelShare: Updated size.</p></li></ul>
+
+<h1>Authors</h1>
+
+<hr>
+
+<ul><li>Benjamin Arnaud aka <a href="http://bunjee.me">bunjee</a> | <a href="mailto:bunjee@omega.gg">bunjee@omega.gg</a>.</li></ul>
+</div>
+</body>
+
+</html>

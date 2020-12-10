@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style rel="stylesheet" media="screen">
+html{font:14px / 24px Helvetica, Arial, sans-serif}body{margin:0px;color:#161616;background:#b4b4b4}div{overflow:hidden;min-width:284px;max-width:608px;margin:auto;padding:0 16px 16px 16px;border-left:1px solid #969696;border-right:1px solid #969696;background:#e6e6e6}h1,h2{margin:24px 0 16px 0}h1{font-size:26px;line-height:32px}h2,h3{font-size:20px}h3{margin:16px 0}p{margin:4px 0}hr{border:0.5px solid #969696}a{font-weight:bold;text-decoration:none;color:#008cdc}a:hover{color:#00b4ff}ul{margin:8px 0;padding-left:24px}img{height:144px;border:1px solid #969696}img:hover{border:1px solid #c8c8c8}
+</style>
+</head>
+
+<body>
+<div>
+<h1><a href="http://omega.gg/MotionBox/changes/1.6.0.html">Changelog 1.6.0</a></h1>
+
+<h3>Previous: <a href="1.5.0.html">Changelog 1.5.0</a></h3>
+
+<h3>Next: <a href="1.7.0.html">Changelog 1.7.0</a></h3>
+
+<h1><a href="http://omega.gg/MotionBox">MotionBox</a></h1>
+
+<hr>
+
+<h2>Overview</h2>
+
+<ul><li><p>Universal backends.</p></li><li><p>macOS support.</p></li><li><p>Subtitles implementation.</p></li></ul>
+
+<h2>Global</h2>
+
+<ul><li>Rename 'The Video Browser' to 'Video Browser'.</li></ul>
+
+<h2>C++</h2>
+
+<ul><li><p>ControllerCore: Add 'updateBackends' and 'resetBackends' functions.</p></li><li><p>ControllerCore: Update 'pathCover' for backends.</p></li><li><p>ControllerCore: Update the 'deleteBrowse' function.</p></li><li><p>ControllerCore: Update data format.</p></li><li><p>ControllerCore: Fix the 'applyTorrentOptions' function.</p></li><li><p>DataLocal: Update 'torrent cache' to 2000 megabytes by default.</p></li></ul>
+
+<h2>QML</h2>
+
+<ul><li><p>Create PageSettingsVideo and PageConsole.</p></li><li><p>Remove PanelCover.</p></li><li><p>Add 'bold' style.</p></li><li><p>Add 'ratio' support.</p></li><li><p>Fix 'toolTip' icon scaling.</p></li><li><p>Create 'PageSubtitles(s)'.</p></li><li><p>Rename 'PanelShare' to 'PanelGet'.</p></li><li><p>Gui: Check hover in the 'onIdleChanged' event.</p></li><li><p>Gui: Fix the automatic selection in the 'onDragEnded' event.</p></li><li><p>Gui: Remove 'keepState' in the 'applyProxy' function.</p></li><li><p>Gui: Remove the 'openFolder' function.</p></li><li><p>PanelBrowse: Update to LineEditBoxClear.</p></li><li><p>PanelBrowse: Update 'scrollBrowse' press event.</p></li><li><p>PanelSettings: Add 'autoPlay' button.</p></li><li><p>PanelSettings: Update 'quality' implementation.</p></li><li><p>PanelSettings: Fix 'buttonRepeat' highlight.</p></li><li><p>PanelTracks: No longer change 'PanelAdd' selection when clicking on 'buttonBrowse'.</p></li><li><p>BarWindowApplication: Add 'toggleTouch' on ViewDrag.</p></li><li><p>BarWindowApplication: Update 'pOpenTabPlaylist' function.</p></li><li><p>List(s): Fix the 'pRestoreScroll' function.</p></li><li><p>List(s): Fix the 'pDragCheck' function.</p></li><li><p>PageSettingsMain: Add the 'pApplyScale' function.</p></li><li><p>PageSettingsVideo: Fix 'elide' behavior.</p></li></ul>
+
+<h1><a href="http://omega.gg/Sky">Sky kit</a></h1>
+
+<hr>
+
+<h2>Overview</h2>
+
+<ul><li>Add subtitle support.</li></ul>
+
+<h2>C++</h2>
+
+<ul><li>Add 'ratio' support.</li></ul>
+
+<h2>SkCore</h2>
+
+<ul><li><p>Create WUnzipper.</p></li><li><p>Create WYamlReader.</p></li><li><p>WControllerApplication: Add 'cursor position'.</p></li><li><p>WControllerApplication: Add the 'keypad' function.</p></li><li><p>WControllerApplication: Update the 'dateFromSecs' function.</p></li><li><p>WControllerApplication: Update the 'ratio' implementation.</p></li></ul>
+
+<h2>SkGui</h2>
+
+<ul><li><p>Create WBackendLoader.</p></li><li><p>Remove WDeclarativeText.</p></li><li><p>WControllerPlaylist: Add the 'getDataLibraryItem' function.</p></li><li><p>WView: Add the 'onScreenChanged' event and 'updateRatio' function.</p></li><li><p>WView: Add the 'isTouching' property.</p></li><li><p>WView: Update the 'update mouse' function.</p></li><li><p>WView: Update the 'mouseMoveEvent' event.</p></li><li><p>WView: Update the 'ratio' initialize.</p></li><li><p>WDeclarativeMouseArea: Update the 'touch' behavior.</p></li><li><p>WDeclarativeMouseArea: Update the 'mouseUngrab' behavior.</p></li><li><p>WDeclarativeMouseArea: Fix the 'wheel' event.</p></li><li><p>WDeclarativeMouseArea: Fix hover in the 'touch' event.</p></li><li><p>WDeclarativeBorders: Fix the color in the 'updatePaintNode' function.</p></li><li><p>WDeclarativePlayer: Update the 'loadSource' keep state behavior.</p></li><li><p>WAbstractBackend: Update the 'quality' enum.</p></li></ul>
+
+<h2>SkMedia</h2>
+
+<ul><li><p>Create WBackendSubtitle.</p></li><li><p>WBackendVlc: Fix 'QT_4' defines.</p></li><li><p>WBackendSubtitle: Add 'thread' support.</p></li></ul>
+
+<h2>SkTorrent</h2>
+
+<ul><li>WBackendTorrent: Fix the 'isEmpty' implementation.</li></ul>
+
+<h2>SkBackend</h2>
+
+<ul><li><p>Create WBackendIndex.</p></li><li><p>Create WBackendCache.</p></li></ul>
+
+<h2>SkyComponents</h2>
+
+<ul><li><p>Create TextSubtitle.</p></li><li><p>Create LineEditBoxClear.</p></li><li><p>Create BaseTextEdit.</p></li><li><p>Create BaseList, List and ComponentList.</p></li><li><p>Create ScrollList and ScrollListDefault.</p></li><li><p>Window: Add a wider resizer area for touch interactions.</p></li><li><p>Window: Add the 'showTouch' and 'hideTouch' functions.</p></li><li><p>Window: Add the 'resizer' alias.</p></li><li><p>TextRich: Update 'link' interactions.</p></li><li><p>ButtonCheck: Update implementation.</p></li><li><p>ButtonsCheck: Add 'elide' property.</p></li><li><p>WallVideo: Add the 'seeking' mouse areas.</p></li><li><p>WallVideo: Update the 'z' on the 'player' item.</p></li><li><p>WallVideo: Update the 'pauseTimeout' to 10 minutes.</p></li></ul>
+
+<h2>Style</h2>
+
+<ul><li><p>Update 'night' border color.</p></li><li><p>ButtonMask: Update hover color.</p></li><li><p>WallVideo: Remove 'loader' opacity.</p></li><li><p>PlayerBrowser: Update text colors.</p></li></ul>
+
+<h2>3rdparty</h2>
+
+<ul><li><p>Add <a href="https://dxr.mozilla.org/mozilla/source/extensions/universalchardet/src">libcharsetdetect</a>.</p></li><li><p>Add <a href="https://github.com/stachenov/quazip">QuaZIP</a>.</p></li><li><p><a href="http://download.qt.io/official_releases/qt">Qt</a>: Update to 5.12.3.</p></li><li><p><a href="http://github.com/arvidn/libtorrent">libtorrent</a>: Update to 1.2.2.</p></li></ul>
+
+<h1>Authors</h1>
+
+<hr>
+
+<ul><li>Benjamin Arnaud aka <a href="http://bunjee.me">bunjee</a> | <a href="mailto:bunjee@omega.gg">bunjee@omega.gg</a>.</li></ul>
+</div>
+</body>
+
+</html>
