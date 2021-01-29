@@ -123,10 +123,10 @@ promptForAction() {
 		read -p `packagenamePrompt $sourcePath ${packageName:-''}` packageName <$TTY
 		packagePath=$dest/$packageName
 		currentItemPath=$packagePath/$1
-		echo mkdir -p $packagePath/$1
-		echo cp -rfL $sourcePath $currentItemPath
-		echo rm -r $sourcePath
-		echo stow -t / -d $dest $packageName
+		mkdir -p $packagePath/$1
+		cp -rfL $sourcePath $currentItemPath
+		rm -r $sourcePath
+		stow -t / -d $dest $packageName
 	fi
 }
 
@@ -136,9 +136,9 @@ loop() {
 	elif [[ -d $1 ]]; then
 		find $1 \
 		-maxdepth 1 \
-		-mindepth 1 ! \
-		-printf '%f\n' \
+		-mindepth 1 \
 		! -type l \
+		-printf '%f\n' \
 		| while read package; do
 			promptForAction $1 $package
 		done
