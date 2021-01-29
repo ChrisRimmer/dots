@@ -6,7 +6,9 @@ set -o errexit
 IFS=$'\n\t'
 TTY=`tty`
 
-if [[ $1 == "-h" ]]; then
+arg1=${1:-""}
+
+if [[ -z $arg1 || $arg1 == "-h" ]]; then
 	echo "Stowify is a script to help you move a big blob of disorganised junk"
 	echo " and package it up neatly into little packages used by stow."
 	echo ""
@@ -135,7 +137,9 @@ loop() {
 		find $1 \
 		-maxdepth 1 \
 		-mindepth 1 ! \
-		-printf '%f\n' | while read package; do
+		-printf '%f\n' \
+		! -type l \
+		| while read package; do
 			promptForAction $1 $package
 		done
 	fi
