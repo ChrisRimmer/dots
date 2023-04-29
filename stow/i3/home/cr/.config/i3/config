@@ -124,18 +124,6 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-exec --no-startup-id "i3-msg 'workspace 1-tty; append_layout ~/.config/i3/layouts/1080p-tty'"
-exec --no-startup-id "i3-msg 'workspace 2-im; append_layout ~/.config/i3/layouts/1080p-comms'"
-
 exec sxhkd &
+exec dunst &
 exec compton -b
-exec wallrotate homeworld &
-
-exec xst -e htop &
-exec xst -e peaclock &
-exec xst -e top &
-exec glmviz &
-exec xst -e ncmpcpp &
-exec xst &
-exec xst &
-exec spotify &

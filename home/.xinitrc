@@ -1,4 +1,4 @@
-setxkbmap gb
+setxkbmap us
 xrdb ~/.Xresources
 i3
 compton -b

@@ -41,7 +41,7 @@ super + s ; r
 	pkill -SIGUSR1 sxhkd
 
 super + Return
-	~/projects/suckless/st/st
+	~/projects/suckless/lukest/st -f "Fira Code: 12"
 
 super + d; {j,k}
 	xrandr --output HDMI1 --auto --{right-of eDP1,off}

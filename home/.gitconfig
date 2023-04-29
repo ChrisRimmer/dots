@@ -1,3 +1,18 @@
+[core]
+	pager = delta --side-by-side
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+
+[merge]
+	conflictstyle = diff3
+
+[diff]
+	colorMoved = default
+
 [user]
 	email = chris@rimmer.wtf
 	name = Chris Rimmer

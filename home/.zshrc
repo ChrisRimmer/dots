@@ -43,6 +43,7 @@ alias gdc='git diff --cached'
 alias gst='git status'
 alias gundo='git checkout -p --'
 alias gunst='git reset HEAD -p'
+alias gco='git checkout'
 
 alias c=clear
 

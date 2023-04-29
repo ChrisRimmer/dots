@@ -1,1 +1,1 @@
-/usr/bin/xst -f scientifica ${@:1} &
+/usr/bin/xst -f "Fira Code" ${@:1} &
